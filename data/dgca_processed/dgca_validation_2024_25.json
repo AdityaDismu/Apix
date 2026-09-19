@@ -1,0 +1,18 @@
+{
+  "reference_period": "2024-25",
+  "source_record_count": 835,
+  "known_source_anomalies": [
+    162
+  ],
+  "city_pair_rows": 834,
+  "city_pair_total_passengers": 165541690,
+  "airline_table_total_passengers": 165541692,
+  "analytical_total_passengers": 165541690,
+  "excluded_source_passengers": 2,
+  "total_cross_check": true,
+  "directional_routes": 40,
+  "basket_passenger_volume": 53353448,
+  "basket_traffic_coverage_percent": 32.2296,
+  "airlines_detected": 14,
+  "status": "success"
+}

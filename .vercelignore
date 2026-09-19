@@ -1,0 +1,30 @@
+# Repository metadata
+.git
+.github
+.vercel
+
+# Secrets / local environments
+.env
+.env.*
+!.env.example
+
+# Python local/build artifacts
+.venv
+venv
+__pycache__
+*.py[cod]
+.pytest_cache
+
+# Node local/build artifacts
+node_modules
+frontend/node_modules
+frontend/dist
+
+# Generated airfare evidence is not required by the deployed read/API layer
+data/raw
+data/clean
+
+# Local/editor files
+.vscode
+.DS_Store
+Thumbs.db

@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+dist/
+
+# Vercel
+.vercel/
+
+# Local/generated data
+data/raw/
+data/clean/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/

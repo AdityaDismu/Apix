@@ -1,0 +1,1471 @@
+# MASTER FRONTEND GENERATION PROMPT — APIx
+
+## 1. PROJECT IDENTITY
+
+Build the complete frontend for **APIx — Real-Time Airfare Price Index for India**.
+
+APIx is a data-driven statistical monitoring and analysis platform designed around the problem statement:
+
+**“Development of a Real-time Airfare Price Index for India through Automated Web Scraping of Airline and Online Travel Aggregator Portals for Augmentation of the Consumer Price Index (CPI).”**
+
+This is an **SIH-level engineering project**, not a generic SaaS dashboard.
+
+The frontend must communicate that APIx is a serious **economic/statistical data platform for monitoring airfare price movement in India**.
+
+The interface should feel like a combination of:
+
+* a modern statistical data portal
+* an aviation intelligence platform
+* an economic monitoring system
+* a polished research/data visualization product
+
+It should NOT look like:
+
+* a generic admin dashboard
+* a cryptocurrency dashboard
+* a banking dashboard
+* a generic AI SaaS product
+* a template with random cards
+* an overused glassmorphism website
+* a dark developer console
+
+The frontend must look **purpose-built for airfare economics and statistical analysis**.
+
+---
+
+# 2. CORE DESIGN DIRECTION
+
+The visual design should be:
+
+**Elegant + professional + modern + analytical + trustworthy + slightly premium.**
+
+Do NOT use a completely dark theme.
+
+Do NOT use a completely white corporate dashboard either.
+
+Use a **balanced light/soft-neutral interface**.
+
+The overall visual feeling should be:
+
+> “A modern Indian aviation statistics and economic intelligence platform.”
+
+Think:
+
+**premium data visualization + aviation + public statistics**
+
+rather than:
+
+**startup SaaS dashboard**.
+
+---
+
+# 3. COLOR SYSTEM
+
+Use a sophisticated balanced palette.
+
+Primary background:
+
+* warm off-white / very light neutral
+* approximately `#F5F7F8`
+
+Main surfaces:
+
+* white
+* approximately `#FFFFFF`
+
+Primary text:
+
+* deep navy
+* approximately `#172033`
+
+Secondary text:
+
+* slate
+* approximately `#667085`
+
+Primary brand color:
+
+* deep aviation blue
+* approximately `#155EEF`
+
+Secondary accent:
+
+* teal
+* approximately `#0E9F9A`
+
+Small highlight accent:
+
+* sky/cyan
+* approximately `#38BDF8`
+
+Success:
+
+* restrained green
+
+Warning:
+
+* amber
+
+Error:
+
+* muted red
+
+Use gradients only very subtly.
+
+Avoid:
+
+* neon colors
+* excessive purple
+* rainbow gradients
+* glowing cards
+* excessive blue everywhere
+
+The interface should have enough contrast and color hierarchy without becoming visually noisy.
+
+---
+
+# 4. BRANDING
+
+Brand name:
+
+**APIx**
+
+Subtitle:
+
+**Real-Time Airfare Price Index**
+
+Create a clean, memorable APIx wordmark treatment.
+
+The “x” can subtly represent:
+
+* index
+* measurement
+* cross-route analysis
+
+But keep the logo simple.
+
+Do not create a complicated logo.
+
+The aviation identity can be represented subtly through:
+
+* route lines
+* aircraft-inspired line motifs
+* geographic/route visualizations
+* departure/arrival indicators
+* small aviation icons
+
+Do not fill the interface with airplane icons.
+
+---
+
+# 5. TYPOGRAPHY
+
+Use a modern highly readable font such as:
+
+* Inter
+* Manrope
+* Plus Jakarta Sans
+
+Prefer **Inter or Manrope**.
+
+Typography hierarchy must be strong.
+
+Large numbers should be highly readable.
+
+Example:
+
+APIx
+
+Real-Time Airfare Price Index
+
+102.37
+
+The large index number should visually dominate supporting text.
+
+Do not use overly decorative fonts.
+
+---
+
+# 6. OVERALL APPLICATION STRUCTURE
+
+Create a polished application shell.
+
+Desktop:
+
+```text
+┌──────────────────────────────────────────────────────────────┐
+│ APIx                                   System Status ●       │
+├───────────────┬──────────────────────────────────────────────┤
+│               │                                              │
+│  APIx         │                                              │
+│               │                                              │
+│ Dashboard     │               MAIN CONTENT                   │
+│               │                                              │
+│ Route         │                                              │
+│ Explorer      │                                              │
+│               │                                              │
+│ Data Quality  │                                              │
+│               │                                              │
+│ Pipeline      │                                              │
+│               │                                              │
+│ Methodology   │                                              │
+│               │                                              │
+│ System        │                                              │
+│               │                                              │
+└───────────────┴──────────────────────────────────────────────┘
+```
+
+Use a refined sidebar.
+
+The sidebar should NOT feel like an old enterprise admin panel.
+
+It should be clean, compact and elegant.
+
+Navigation:
+
+1. Dashboard
+2. Route Explorer
+3. Data Quality
+4. Collection Pipeline
+5. Methodology
+6. System Status
+
+At the bottom of the sidebar:
+
+**APIx Prototype**
+**Data-driven airfare intelligence**
+
+---
+
+# 7. DASHBOARD — MOST IMPORTANT SCREEN
+
+The dashboard is the primary SIH presentation screen.
+
+It must immediately communicate:
+
+1. What APIx measures
+2. Current index status
+3. Route coverage
+4. Data collection status
+5. Data quality
+6. Lead-time analysis
+7. Price movement
+
+Do NOT simply create 8 rectangular KPI cards.
+
+Use a carefully composed visual hierarchy.
+
+---
+
+## DASHBOARD HEADER
+
+Display:
+
+**Real-Time Airfare Price Index**
+
+Supporting text:
+
+**A high-frequency indicator of domestic airfare movements designed to support airfare price measurement and CPI augmentation.**
+
+On the right:
+
+**● Data pipeline status**
+
+**Last updated: [timestamp]**
+
+A small refresh control.
+
+---
+
+# 8. NATIONAL INDEX HERO
+
+The National APIx should be the most visually important metric.
+
+However:
+
+## NEVER FABRICATE A NATIONAL INDEX.
+
+At the current prototype stage, legitimate route weights have not yet been loaded.
+
+Therefore the interface must gracefully display:
+
+**National APIx**
+
+**Not yet available**
+
+Supporting explanation:
+
+**Requires verified route passenger-volume weights.**
+
+Also show:
+
+**Current route coverage: 1 route**
+
+Do NOT display fake `100.00` as if it were a national index.
+
+The frontend must distinguish between:
+
+* available
+* unavailable
+* insufficient data
+* loading
+* error
+
+states.
+
+Once the backend provides a legitimate national index, automatically display it.
+
+Example future state:
+
+```text
+NATIONAL APIx
+
+102.37
+
+▲ 1.84%
+
+vs previous observation
+```
+
+---
+
+# 9. CURRENT DATA SNAPSHOT
+
+Create a visually interesting data snapshot section.
+
+Show real backend values when available:
+
+```text
+OBSERVATIONS
+313
+
+VALID
+292
+
+FLAGGED
+21
+
+LEAD-TIME WINDOWS
+6 / 6
+```
+
+These should not necessarily be four identical cards.
+
+Use different visual treatments such as:
+
+* number
+* small status indicator
+* compact progress indicator
+* supporting label
+
+The purpose is to make the data pipeline feel alive.
+
+---
+
+# 10. APIx TREND VISUALIZATION
+
+Create a large primary chart:
+
+**Airfare Price Index History**
+
+Use a clean line chart.
+
+X-axis:
+
+* observation date/time
+
+Y-axis:
+
+* APIx
+
+Use:
+
+* subtle grid
+* clean tooltips
+* clear axis labels
+* smooth but not exaggerated line animation
+
+Include time filters:
+
+* 1D
+* 7D
+* 30D
+* 90D
+
+If historical data is unavailable, show a beautiful empty state:
+
+**Not enough historical observations**
+
+**Run additional collection cycles to build the time series.**
+
+Never create fake historical values.
+
+---
+
+# 11. ROUTE MOVEMENT SECTION
+
+Create a section titled:
+
+**Route-Level Airfare Movement**
+
+Show available routes.
+
+Current prototype may only contain:
+
+**DEL → BOM**
+
+Display:
+
+```text
+DEL → BOM
+
+Route APIx
+100.00
+
+Current snapshot
+17 Sep 2026
+
+292 valid observations
+```
+
+If more routes become available, show them dynamically.
+
+Each route should be clickable and open the Route Explorer.
+
+Do not hardcode the current route as the only possible route.
+
+---
+
+# 12. LEAD-TIME ANALYSIS
+
+This is one of the most important unique features of APIx.
+
+Create a visually strong section:
+
+**Fare by Advance Purchase Window**
+
+Explain briefly:
+
+**Observed airfare across different advance-purchase windows.**
+
+Show:
+
+```text
+T+1
+T+7
+T+15
+T+21
+T+30
+T+45
+```
+
+Use a line or connected-point chart.
+
+The x-axis represents:
+
+**Days before travel**
+
+The y-axis represents:
+
+**Standardized one-way economy fare (INR)**
+
+Highlight **T+21** subtly because it aligns with the CPI-oriented collection methodology used in the project.
+
+Add a small annotation:
+
+**T+21 — CPI-aligned collection window**
+
+Do not overemphasize this annotation.
+
+---
+
+# 13. PIPELINE SUMMARY
+
+Show the actual data pipeline:
+
+```text
+SOURCE
+   ↓
+COLLECTION
+   ↓
+VALIDATION
+   ↓
+CLEANING
+   ↓
+DATABASE
+   ↓
+INDEX ENGINE
+   ↓
+APIx
+```
+
+Make this visual and elegant.
+
+Each stage should have:
+
+* status
+* small icon
+* optional timestamp
+
+Example:
+
+```text
+Collection       ✓
+Cleaning         ✓
+Database         ✓
+Index Engine     ✓
+```
+
+This section should communicate that APIx is an actual end-to-end system.
+
+---
+
+# 14. ROUTE EXPLORER PAGE
+
+This is the second major page.
+
+Title:
+
+**Route Explorer**
+
+Subtitle:
+
+**Explore airfare movements, observations and index calculations by route.**
+
+Provide two selectors:
+
+```text
+Origin
+[ DEL ▼ ]
+
+Destination
+[ BOM ▼ ]
+```
+
+Do not hardcode only DEL/BOM.
+
+Use backend route data.
+
+---
+
+## ROUTE HERO
+
+Example:
+
+```text
+DEL → BOM
+
+Route Airfare Index
+
+100.00
+
+Prototype Base Period
+
+Last updated
+17 Sep 2026 • 21:32 IST
+```
+
+Show a compact route map/visual route line if possible.
+
+A simple stylized India route visualization is preferred over an external map API.
+
+Example:
+
+```text
+DEL ● ───────────── ✈ ───────────── ● BOM
+```
+
+Keep it tasteful.
+
+---
+
+# 15. ROUTE INDEX HISTORY
+
+Large chart:
+
+**Route APIx History**
+
+Allow:
+
+* 1D
+* 7D
+* 30D
+* 90D
+
+Use actual backend data only.
+
+Tooltips should show:
+
+* timestamp
+* APIx
+* observations
+* lead-time coverage
+
+---
+
+# 16. LEAD-TIME BREAKDOWN ON ROUTE PAGE
+
+Show all six windows:
+
+```text
+T+1
+T+7
+T+15
+T+21
+T+30
+T+45
+```
+
+For each:
+
+* median/representative fare if backend provides it
+* observation count
+* data quality status
+
+Do not calculate unsupported statistics in the frontend.
+
+The frontend should display values returned by the backend.
+
+---
+
+# 17. REAL AIRFARE OBSERVATION TABLE
+
+Create a high-quality table titled:
+
+**Collected Fare Observations**
+
+Columns:
+
+* Airline
+* Flight
+* Departure
+* Duration
+* Stops
+* Travel Date
+* Advance Days
+* Fare
+* Quality
+
+Example:
+
+```text
+IndiGo
+06:15
+2h 10m
+0 stops
+18 Sep 2026
+T+1
+₹6,842
+✓ Valid
+```
+
+Use pagination.
+
+Add filters:
+
+* airline
+* advance window
+* quality
+* travel date
+
+Use compact table density.
+
+This is not a spreadsheet-looking UI.
+
+---
+
+# 18. DATA QUALITY PAGE
+
+Title:
+
+**Data Quality & Validation**
+
+Purpose:
+
+Show that scraped airfare is not blindly used.
+
+Top section:
+
+```text
+313
+Total Observations
+
+292
+Valid
+
+21
+Flagged
+```
+
+Then show a visual validation pipeline.
+
+Checks:
+
+* Route validation
+* Travel date validation
+* Airline validation
+* Fare validation
+* Currency validation
+* Economy-class validation
+* One-way validation
+* Non-stop validation
+* Duplicate detection
+* Outlier detection
+* Fare completeness
+
+Use statuses:
+
+✓ Passed
+
+⚠ Flagged
+
+✕ Failed
+
+---
+
+# 19. OUTLIER VISUALIZATION
+
+Create a section:
+
+**Fare Distribution & Outliers**
+
+If backend data supports it, show:
+
+* distribution
+* valid observations
+* flagged observations
+
+Use a clean chart.
+
+Explain:
+
+**Outliers are flagged rather than silently deleted from the raw dataset.**
+
+Do not invent statistical values.
+
+---
+
+# 20. COLLECTION PIPELINE PAGE
+
+Title:
+
+**Collection Pipeline**
+
+Show the latest pipeline run.
+
+Example:
+
+```text
+Pipeline Run
+
+8da536ea-4679-4d9d-b7d2-e64df6cd2bcd
+
+Status
+● Completed
+
+17 Sep 2026
+21:32 IST
+```
+
+Then show six synchronized collection windows:
+
+```text
+T+1     ✓ 51
+T+7     ✓ 53
+T+15    ✓ 51
+T+21    ✓ 52
+T+30    ✓ 53
+T+45    ✓ 53
+```
+
+The UI should visually communicate that these six windows belong to ONE pipeline batch.
+
+This is important.
+
+Show:
+
+```text
+ONE PIPELINE BATCH
+        │
+        ├── T+1
+        ├── T+7
+        ├── T+15
+        ├── T+21
+        ├── T+30
+        └── T+45
+```
+
+---
+
+# 21. PIPELINE TIMELINE
+
+Create a horizontal/vertical timeline:
+
+```text
+Collection
+    ↓
+Raw Data
+    ↓
+Validation
+    ↓
+Cleaning
+    ↓
+Database
+    ↓
+Index Calculation
+```
+
+Each stage can display:
+
+* started
+* completed
+* duration
+* records processed
+
+Only display fields actually returned by the backend.
+
+---
+
+# 22. METHODOLOGY PAGE
+
+This page should explain the mathematics without becoming a textbook.
+
+Title:
+
+**APIx Methodology**
+
+Sections:
+
+### 1. Data Collection
+
+Explain:
+
+* automated airfare collection
+* airline/OTA/authorized source concept
+* route
+* travel date
+* advance purchase windows
+
+### 2. Standardized Fare
+
+Visual:
+
+```text
+Raw Fare
+   ↓
+Adult
+   ↓
+Economy
+   ↓
+One-way
+   ↓
+Non-stop
+   ↓
+Mandatory charges
+   ↓
+Standardized Fare
+```
+
+Optional extras such as:
+
+* seat selection
+* meals
+* insurance
+* optional baggage
+* flexible upgrades
+
+should not be included in the standardized fare.
+
+### 3. Validation & Cleaning
+
+Visual:
+
+```text
+Raw observations
+       ↓
+Validation
+       ↓
+Deduplication
+       ↓
+Outlier detection
+       ↓
+Clean observations
+```
+
+### 4. Price Relative
+
+Display:
+
+```text
+Current Fare
+────────────── × 100
+Base Fare
+```
+
+### 5. Jevons Index
+
+Explain the elementary Jevons/geometric mean approach.
+
+Keep the explanation simple.
+
+### 6. Route Index
+
+Show:
+
+```text
+Fare observations
+       ↓
+Price relatives
+       ↓
+Jevons aggregation
+       ↓
+Route APIx
+```
+
+### 7. National APIx
+
+Show:
+
+```text
+Route APIx values
+        ↓
+Verified passenger-volume weights
+        ↓
+Weighted aggregation
+        ↓
+National APIx
+```
+
+Clearly state:
+
+**National aggregation requires verified route weights.**
+
+### 8. CPI Relationship
+
+Explain that APIx is intended as a:
+
+**high-frequency airfare indicator designed to augment/support airfare price measurement for CPI-related analysis.**
+
+Do not claim that APIx is the official CPI.
+
+Do not imply that APIx replaces official CPI.
+
+---
+
+# 23. SYSTEM STATUS PAGE
+
+Create a technical but visually polished page.
+
+Show:
+
+```text
+Backend API
+● Online
+
+Database
+● Connected
+
+Collection Engine
+● Ready
+
+Cleaning Engine
+● Ready
+
+Index Engine
+● Ready
+
+Scheduler
+● Ready
+```
+
+Then:
+
+**Database Snapshot**
+
+* collection runs
+* observations
+* valid observations
+* flagged observations
+* route snapshots
+* national index availability
+
+This page is primarily useful for demonstrations and development.
+
+---
+
+# 24. EMPTY STATES
+
+This is extremely important.
+
+The backend is still being expanded.
+
+The frontend must look excellent even when data is missing.
+
+Examples:
+
+### National index unavailable
+
+```text
+National APIx
+
+Not available yet
+
+Verified route passenger-volume
+weights are required for national
+aggregation.
+
+[View Methodology]
+```
+
+### No historical data
+
+```text
+Not enough historical data
+
+Additional collection cycles are
+required to construct this trend.
+```
+
+### No routes
+
+```text
+No verified routes available
+
+Add route configuration and verified
+route-volume weights to enable
+national aggregation.
+```
+
+### API error
+
+```text
+Data temporarily unavailable
+
+The backend did not return a valid response.
+
+[Retry]
+```
+
+Never show blank white space.
+
+Never insert fake data.
+
+---
+
+# 25. LOADING STATES
+
+Use elegant skeleton loading.
+
+Do not use a giant spinner.
+
+Charts should have skeleton placeholders.
+
+Tables should have row skeletons.
+
+Numbers should have animated placeholders.
+
+---
+
+# 26. MICRO-INTERACTIONS
+
+Use subtle animations.
+
+Examples:
+
+* cards gently appear
+* charts draw in
+* navigation transitions smoothly
+* route selector transitions
+* numbers animate when values change
+* table rows have subtle hover state
+* pipeline stages illuminate when active
+
+Avoid:
+
+* excessive bouncing
+* huge page transitions
+* spinning objects
+* flashy particle backgrounds
+* distracting animations
+
+The interface should feel alive but professional.
+
+---
+
+# 27. RESPONSIVE DESIGN
+
+The frontend must work on:
+
+* desktop
+* laptop
+* tablet
+* mobile
+
+Desktop is the primary target because this is an SIH presentation system.
+
+On mobile:
+
+* sidebar becomes drawer
+* charts become horizontally scrollable where necessary
+* tables become responsive
+* KPI sections stack
+* route visualization remains readable
+
+---
+
+# 28. ACCESSIBILITY
+
+Use:
+
+* proper contrast
+* readable font sizes
+* keyboard navigation
+* semantic HTML
+* accessible buttons
+* accessible chart labels where practical
+
+Do not rely only on color to communicate status.
+
+For example:
+
+✓ Valid
+
+rather than only a green dot.
+
+---
+
+# 29. TECH STACK
+
+Use:
+
+**React + Vite**
+
+**Tailwind CSS**
+
+**React Router**
+
+**Recharts or ECharts**
+
+**Lucide React icons**
+
+Use Framer Motion only where useful.
+
+Do not introduce unnecessary libraries.
+
+Keep the code modular and maintainable.
+
+---
+
+# 30. COMPONENT ARCHITECTURE
+
+Use reusable components such as:
+
+```text
+Layout
+Sidebar
+TopBar
+PageHeader
+StatBlock
+IndexHero
+TrendChart
+RouteCard
+RouteSelector
+LeadTimeChart
+PipelineTimeline
+QualitySummary
+DataTable
+StatusBadge
+EmptyState
+LoadingState
+ErrorState
+MethodologyCard
+```
+
+Do not duplicate large UI blocks across pages.
+
+---
+
+# 31. FRONTEND DATA ARCHITECTURE
+
+Initially create a clean API service layer.
+
+Example conceptual structure:
+
+```text
+src/
+  api/
+    client.js
+    indexApi.js
+    routeApi.js
+    airfareApi.js
+    qualityApi.js
+    pipelineApi.js
+
+  components/
+    layout/
+    charts/
+    dashboard/
+    routes/
+    quality/
+    pipeline/
+    methodology/
+
+  pages/
+    Dashboard.jsx
+    RouteExplorer.jsx
+    DataQuality.jsx
+    Pipeline.jsx
+    Methodology.jsx
+    SystemStatus.jsx
+
+  hooks/
+  utils/
+  assets/
+```
+
+The frontend should be designed so that the API base URL can later be configured through an environment variable.
+
+Example:
+
+```text
+VITE_API_BASE_URL
+```
+
+Do not hardcode production URLs.
+
+---
+
+# 32. BACKEND INTEGRATION PREPARATION
+
+The frontend will later connect to an existing FastAPI backend.
+
+The backend currently exposes endpoints conceptually including:
+
+```text
+/api/health
+/api/config
+/api/routes
+/api/index/route/{origin}/{destination}
+/api/index/national
+/api/airfares
+/api/quality
+/api/collection/runs
+```
+
+Build the frontend architecture so these endpoints can be connected cleanly later.
+
+For the generated frontend stage, if backend data cannot be accessed during generation:
+
+**use clearly isolated mock/demo adapters only for visual development.**
+
+Do NOT mix mock data into the actual API service layer.
+
+Make it easy to remove mock data completely.
+
+---
+
+# 33. IMPORTANT DATA INTEGRITY RULE
+
+This is a core project requirement.
+
+The frontend must NEVER fabricate:
+
+* national APIx
+* route weights
+* historical index values
+* airfare prices
+* passenger volumes
+* airline market shares
+* route rankings
+* data quality percentages
+* collection results
+
+If the backend does not provide a value:
+
+show:
+
+**Unavailable**
+
+or
+
+**Insufficient data**
+
+with a short explanation.
+
+The UI should be transparent rather than pretending the prototype has data it does not have.
+
+---
+
+# 34. DO NOT MAKE IT LOOK LIKE A TEMPLATE
+
+Avoid common AI-generated dashboard patterns:
+
+NO:
+
+* 12 identical cards
+* giant purple gradients
+* dark glassmorphism
+* excessive rounded rectangles
+* random decorative blobs
+* meaningless AI-generated illustrations
+* excessive shadows
+* generic "Welcome back, Admin"
+* fake analytics
+* fake percentages
+* fake revenue-style charts
+* generic SaaS sidebar
+
+Every visual element must have a reason connected to APIx.
+
+---
+
+# 35. VISUAL STORYTELLING
+
+The interface should tell a story:
+
+```text
+AIRFARE DATA
+      ↓
+AUTOMATED COLLECTION
+      ↓
+VALIDATION
+      ↓
+STANDARDIZATION
+      ↓
+CLEAN DATA
+      ↓
+PRICE RELATIVES
+      ↓
+JEVONS INDEX
+      ↓
+ROUTE APIx
+      ↓
+WEIGHTED NATIONAL APIx
+      ↓
+CPI-AUGMENTATION INSIGHT
+```
+
+The user should understand this progression naturally by navigating the product.
+
+---
+
+# 36. SIH PRESENTATION PRIORITY
+
+The frontend should be optimized for a live judge demonstration.
+
+A judge should understand within approximately 30 seconds:
+
+**What is APIx?**
+
+**Where does the data come from?**
+
+**How much data has been collected?**
+
+**How is it cleaned?**
+
+**How is the index calculated?**
+
+**What route is being measured?**
+
+**How can this eventually support CPI airfare measurement?**
+
+The UI should answer these visually.
+
+---
+
+# 37. DEMO MODE BEHAVIOR
+
+Create a polished frontend that can operate even if the backend is temporarily unavailable.
+
+However, clearly distinguish:
+
+**LIVE BACKEND DATA**
+
+from
+
+**DEMO / PREVIEW DATA**
+
+Never silently present demo data as live data.
+
+If a demo fallback is included, label it clearly.
+
+---
+
+# 38. FINAL QUALITY BAR
+
+The final frontend should feel like a serious product that could be shown to:
+
+* SIH judges
+* government/statistical stakeholders
+* aviation researchers
+* economists
+* data scientists
+* developers
+
+It should be polished enough that the first reaction is:
+
+> “This is an actual data platform.”
+
+rather than:
+
+> “This is a student dashboard template.”
+
+---
+
+# 39. FINAL OUTPUT REQUIREMENTS
+
+Generate a complete working frontend project.
+
+It must include:
+
+* package.json
+* Vite configuration
+* Tailwind configuration if required
+* React application
+* routing
+* reusable components
+* responsive layout
+* all six pages
+* charts
+* tables
+* loading states
+* error states
+* empty states
+* methodology visuals
+* API service architecture
+* environment configuration
+* clean component structure
+
+The application must run with the standard commands:
+
+```bash
+npm install
+npm run dev
+```
+
+Make sure there are no broken imports or missing components.
+
+Prioritize:
+
+**visual quality + usability + data storytelling + maintainability.**
+
+Do not prioritize unnecessary features.
+
+---
+
+# 40. THE MOST IMPORTANT DESIGN PRINCIPLE
+
+APIx should look like a **living statistical instrument**, not an ordinary dashboard.
+
+The visual language should communicate:
+
+**measurement**
+**movement**
+**routes**
+**data**
+**trust**
+**transparency**
+**aviation**
+**Indian economic context**
+
+Every design decision should support that identity.
