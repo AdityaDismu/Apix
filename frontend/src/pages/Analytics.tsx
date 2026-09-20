@@ -135,18 +135,18 @@ function textFrom(
 
 function movementClass(value: number | null) {
   if (value === null) {
-    return 'text-[#667085]';
+    return 'text-[#74727A]';
   }
 
   if (value > 0.01) {
-    return 'text-[#B42318]';
+    return 'text-[#A85C57]';
   }
 
   if (value < -0.01) {
-    return 'text-[#027A48]';
+    return 'text-[#4E8066]';
   }
 
-  return 'text-[#667085]';
+  return 'text-[#74727A]';
 }
 
 function movementLabel(value: number | null) {
@@ -204,12 +204,12 @@ export default function Analytics() {
 
   useEffect(() => {
     Promise.all([
-      getNationalHistory(5000),
+      getNationalHistory(1000),
       getHeatmap(),
       getQuality(),
       getRoutes(),
       getAirfares({
-        limit: 5000,
+        limit: 1000,
         offset: 0,
       }),
     ])
@@ -595,7 +595,7 @@ export default function Analytics() {
           {error}
         </div>
       ) : loading ? (
-        <div className="py-16 text-center text-sm text-[#667085]">
+        <div className="py-16 text-center text-sm text-[#74727A]">
           Loading analytics…
         </div>
       ) : (
@@ -605,7 +605,7 @@ export default function Analytics() {
             <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
               <div>
                 <div className="flex items-center gap-2">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#EEF4FF] text-[#155EEF]">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#EEE8F2] text-[#6B5A78]">
                     <Gauge size={16} />
                   </div>
 
@@ -617,7 +617,7 @@ export default function Analytics() {
                 {latestNational ? (
                   <>
                     <div className="mt-4 flex items-end gap-4">
-                      <div className="text-5xl font-semibold tracking-[-0.04em] text-[#172033] sm:text-6xl">
+                      <div className="text-5xl font-semibold tracking-[-0.04em] text-[#30313A] sm:text-6xl">
                         {latestNational.index.toFixed(
                           4,
                         )}
@@ -650,7 +650,7 @@ export default function Analytics() {
                       </div>
                     </div>
 
-                    <p className="mt-2 max-w-2xl text-xs leading-5 text-[#667085]">
+                    <p className="mt-2 max-w-2xl text-xs leading-5 text-[#74727A]">
                       APIx summarizes movement in observed
                       domestic airfare prices relative to the
                       prototype base index of 100. The current
@@ -661,11 +661,11 @@ export default function Analytics() {
                   </>
                 ) : (
                   <>
-                    <div className="mt-5 text-4xl font-semibold text-[#172033]">
+                    <div className="mt-5 text-4xl font-semibold text-[#30313A]">
                       —
                     </div>
 
-                    <p className="mt-2 text-xs text-[#667085]">
+                    <p className="mt-2 text-xs text-[#74727A]">
                       National APIx history is not yet available.
                     </p>
                   </>
@@ -674,45 +674,45 @@ export default function Analytics() {
 
               {latestNational && (
                 <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-                  <div className="rounded-xl border border-[#E4E7EC] bg-[#F9FAFB] p-4">
-                    <div className="text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                  <div className="rounded-xl border border-[#DCD7CE] bg-[#F6F2EC] p-4">
+                    <div className="text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                       Coverage
                     </div>
 
-                    <div className="mt-2 text-xl font-semibold text-[#172033]">
+                    <div className="mt-2 text-xl font-semibold text-[#30313A]">
                       {coverage?.toFixed(1)}%
                     </div>
 
-                    <div className="mt-1 text-[10px] text-[#667085]">
+                    <div className="mt-1 text-[10px] text-[#74727A]">
                       weighted route coverage
                     </div>
                   </div>
 
-                  <div className="rounded-xl border border-[#E4E7EC] bg-[#F9FAFB] p-4">
-                    <div className="text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                  <div className="rounded-xl border border-[#DCD7CE] bg-[#F6F2EC] p-4">
+                    <div className="text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                       Routes
                     </div>
 
-                    <div className="mt-2 text-xl font-semibold text-[#172033]">
+                    <div className="mt-2 text-xl font-semibold text-[#30313A]">
                       {latestNational.routes_used}/
                       {latestNational.routes_expected}
                     </div>
 
-                    <div className="mt-1 text-[10px] text-[#667085]">
+                    <div className="mt-1 text-[10px] text-[#74727A]">
                       covered routes
                     </div>
                   </div>
 
-                  <div className="rounded-xl border border-[#E4E7EC] bg-[#F9FAFB] p-4">
-                    <div className="text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                  <div className="rounded-xl border border-[#DCD7CE] bg-[#F6F2EC] p-4">
+                    <div className="text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                       Observation date
                     </div>
 
-                    <div className="mt-2 text-sm font-semibold text-[#172033]">
+                    <div className="mt-2 text-sm font-semibold text-[#30313A]">
                       {latestNational.observation_date}
                     </div>
 
-                    <div className="mt-1 text-[10px] text-[#667085]">
+                    <div className="mt-1 text-[10px] text-[#74727A]">
                       latest national snapshot
                     </div>
                   </div>
@@ -722,7 +722,7 @@ export default function Analytics() {
 
             {latestNational && (
               <div className="mt-6">
-                <div className="mb-2 flex items-center justify-between text-[10px] font-semibold text-[#667085]">
+                <div className="mb-2 flex items-center justify-between text-[10px] font-semibold text-[#74727A]">
                   <span>
                     PASSENGER-WEIGHTED NETWORK COVERAGE
                   </span>
@@ -732,9 +732,9 @@ export default function Analytics() {
                   </span>
                 </div>
 
-                <div className="h-2 overflow-hidden rounded-full bg-[#EAECF0]">
+                <div className="h-2 overflow-hidden rounded-full bg-[#E1DBD2]">
                   <div
-                    className="h-full rounded-full bg-[#155EEF] transition-all"
+                    className="h-full rounded-full bg-[#6B5A78] transition-all"
                     style={{
                       width: `${Math.min(
                         Math.max(coverage || 0, 0),
@@ -759,14 +759,14 @@ export default function Analytics() {
                   How the national index is evolving
                 </h2>
 
-                <p className="mt-1 max-w-2xl text-xs leading-5 text-[#667085]">
+                <p className="mt-1 max-w-2xl text-xs leading-5 text-[#74727A]">
                   Each point represents a real daily national
                   APIx snapshot. The series is intentionally not
                   filled with synthetic history.
                 </p>
               </div>
 
-              <div className="flex items-center gap-2 rounded-lg border border-[#E4E7EC] bg-[#F9FAFB] px-3 py-2 text-[10px] text-[#667085]">
+              <div className="flex items-center gap-2 rounded-lg border border-[#DCD7CE] bg-[#F6F2EC] px-3 py-2 text-[10px] text-[#74727A]">
                 <Activity size={13} />
                 {nationalHistory.length}{' '}
                 {nationalHistory.length === 1
@@ -784,17 +784,17 @@ export default function Analytics() {
                 />
               </div>
             ) : (
-              <div className="mt-5 rounded-xl border border-dashed border-[#D0D5DD] bg-[#FAFBFC] px-6 py-10 text-center">
+              <div className="mt-5 rounded-xl border border-dashed border-[#CDC5BB] bg-[#F6F2EC] px-6 py-10 text-center">
                 <Activity
                   size={24}
-                  className="mx-auto text-[#98A2B3]"
+                  className="mx-auto text-[#9A9499]"
                 />
 
-                <div className="mt-3 text-sm font-semibold text-[#344054]">
+                <div className="mt-3 text-sm font-semibold text-[#4B4851]">
                   Trend history is still accumulating
                 </div>
 
-                <p className="mx-auto mt-2 max-w-md text-xs leading-5 text-[#667085]">
+                <p className="mx-auto mt-2 max-w-md text-xs leading-5 text-[#74727A]">
                   APIx requires additional real daily
                   observations before a meaningful national trend
                   can be displayed. No artificial periods are
@@ -816,14 +816,14 @@ export default function Analytics() {
                   Average observed fare by advance purchase
                 </h2>
 
-                <p className="mt-1 max-w-2xl text-xs leading-5 text-[#667085]">
+                <p className="mt-1 max-w-2xl text-xs leading-5 text-[#74727A]">
                   APIx collects fares at multiple booking horizons
                   to observe how airfare changes as the travel date
                   approaches. Only valid observations are included.
                 </p>
               </div>
 
-              <div className="rounded-lg border border-[#E4E7EC] bg-[#F9FAFB] px-3 py-2 text-[10px] text-[#667085]">
+              <div className="rounded-lg border border-[#DCD7CE] bg-[#F6F2EC] px-3 py-2 text-[10px] text-[#74727A]">
                 {formatNumber(totalValidFares)} valid observations
                 available
               </div>
@@ -845,23 +845,23 @@ export default function Analytics() {
                       key={item.advanceDays}
                       className={`rounded-xl border p-4 ${
                         item.advanceDays === 21
-                          ? 'border-[#B8D4FF] bg-[#F4F8FF]'
-                          : 'border-[#E4E7EC] bg-[#F9FAFB]'
+                          ? 'border-[#D9CDE0] bg-[#F6F2EC]'
+                          : 'border-[#DCD7CE] bg-[#F6F2EC]'
                       }`}
                     >
                       <div className="flex items-center justify-between">
-                        <div className="text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                        <div className="text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                           {item.label}
                         </div>
 
                         {item.advanceDays === 21 && (
-                          <span className="rounded-full bg-[#E8F1FF] px-2 py-0.5 text-[8px] font-bold uppercase tracking-wide text-[#155EEF]">
+                          <span className="rounded-full bg-[#E8F1FF] px-2 py-0.5 text-[8px] font-bold uppercase tracking-wide text-[#6B5A78]">
                             CPI aligned
                           </span>
                         )}
                       </div>
 
-                      <div className="mt-3 text-lg font-semibold text-[#172033]">
+                      <div className="mt-3 text-lg font-semibold text-[#30313A]">
                         {item.observations > 0
                           ? formatCurrency(
                               item.averageFare,
@@ -869,7 +869,7 @@ export default function Analytics() {
                           : '—'}
                       </div>
 
-                      <div className="mt-1 text-[10px] text-[#667085]">
+                      <div className="mt-1 text-[10px] text-[#74727A]">
                         {formatNumber(
                           item.observations,
                         )}{' '}
@@ -880,17 +880,17 @@ export default function Analytics() {
                 </div>
               </>
             ) : (
-              <div className="mt-5 rounded-xl border border-dashed border-[#D0D5DD] bg-[#FAFBFC] px-6 py-10 text-center">
+              <div className="mt-5 rounded-xl border border-dashed border-[#CDC5BB] bg-[#F6F2EC] px-6 py-10 text-center">
                 <BarChart3
                   size={24}
-                  className="mx-auto text-[#98A2B3]"
+                  className="mx-auto text-[#9A9499]"
                 />
 
-                <div className="mt-3 text-sm font-semibold text-[#344054]">
+                <div className="mt-3 text-sm font-semibold text-[#4B4851]">
                   No lead-time fare observations available
                 </div>
 
-                <p className="mx-auto mt-2 max-w-md text-xs text-[#667085]">
+                <p className="mx-auto mt-2 max-w-md text-xs text-[#74727A]">
                   Real valid airfare observations will appear here
                   as collection cycles accumulate.
                 </p>
@@ -910,7 +910,7 @@ export default function Analytics() {
                   Representative route signals
                 </h2>
 
-                <p className="mt-1 max-w-2xl text-xs leading-5 text-[#667085]">
+                <p className="mt-1 max-w-2xl text-xs leading-5 text-[#74727A]">
                   Explore the individual routes that make up the
                   national airfare basket. Passenger-volume weights
                   determine each route's contribution to National
@@ -921,7 +921,7 @@ export default function Analytics() {
               <div className="relative w-full lg:w-72">
                 <Search
                   size={14}
-                  className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[#98A2B3]"
+                  className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[#9A9499]"
                 />
 
                 <input
@@ -930,7 +930,7 @@ export default function Analytics() {
                     setRouteSearch(event.target.value)
                   }
                   placeholder="Search route, e.g. DEL BOM"
-                  className="h-10 w-full rounded-lg border border-[#D0D5DD] bg-white pl-9 pr-3 text-xs text-[#172033] outline-none transition focus:border-[#155EEF] focus:ring-2 focus:ring-[#155EEF]/10"
+                  className="h-10 w-full rounded-lg border border-[#CDC5BB] bg-white pl-9 pr-3 text-xs text-[#30313A] outline-none transition focus:border-[#6B5A78] focus:ring-2 focus:ring-[#6B5A78]/10"
                 />
               </div>
             </div>
@@ -938,28 +938,28 @@ export default function Analytics() {
             <div className="mt-5 overflow-x-auto">
               <table className="w-full min-w-[760px] text-left">
                 <thead>
-                  <tr className="border-b border-[#EAECF0]">
-                    <th className="px-3 py-3 text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                  <tr className="border-b border-[#E1DBD2]">
+                    <th className="px-3 py-3 text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                       Route
                     </th>
 
-                    <th className="px-3 py-3 text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                    <th className="px-3 py-3 text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                       Route APIx
                     </th>
 
-                    <th className="px-3 py-3 text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                    <th className="px-3 py-3 text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                       Movement
                     </th>
 
-                    <th className="px-3 py-3 text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                    <th className="px-3 py-3 text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                       Weight
                     </th>
 
-                    <th className="px-3 py-3 text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                    <th className="px-3 py-3 text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                       Coverage
                     </th>
 
-                    <th className="px-3 py-3 text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                    <th className="px-3 py-3 text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                       Action
                     </th>
                   </tr>
@@ -976,17 +976,17 @@ export default function Analytics() {
                       return (
                         <tr
                           key={key}
-                          className="border-b border-[#F2F4F7] last:border-0"
+                          className="border-b border-[#ECE8E1] last:border-0"
                         >
                           <td className="px-3 py-4">
-                            <div className="font-mono text-xs font-semibold text-[#172033]">
+                            <div className="font-mono text-xs font-semibold text-[#30313A]">
                               {route.origin} →{' '}
                               {route.destination}
                             </div>
                           </td>
 
                           <td className="px-3 py-4">
-                            <span className="text-xs font-semibold text-[#172033]">
+                            <span className="text-xs font-semibold text-[#30313A]">
                               {route.index === null
                                 ? '—'
                                 : route.index.toFixed(
@@ -1034,7 +1034,7 @@ export default function Analytics() {
                             </span>
                           </td>
 
-                          <td className="px-3 py-4 text-xs text-[#475467]">
+                          <td className="px-3 py-4 text-xs text-[#5F5A63]">
                             {route.weight === null
                               ? '—'
                               : `${(
@@ -1046,14 +1046,14 @@ export default function Analytics() {
                           <td className="px-3 py-4">
                             {route.coverage ===
                             null ? (
-                              <span className="text-[10px] text-[#98A2B3]">
+                              <span className="text-[10px] text-[#9A9499]">
                                 —
                               </span>
                             ) : (
                               <div className="flex items-center gap-2">
-                                <div className="h-1.5 w-20 overflow-hidden rounded-full bg-[#EAECF0]">
+                                <div className="h-1.5 w-20 overflow-hidden rounded-full bg-[#E1DBD2]">
                                   <div
-                                    className="h-full rounded-full bg-[#0E9F9A]"
+                                    className="h-full rounded-full bg-[#718A78]"
                                     style={{
                                       width: `${Math.min(
                                         Math.max(
@@ -1066,7 +1066,7 @@ export default function Analytics() {
                                   />
                                 </div>
 
-                                <span className="text-[10px] text-[#667085]">
+                                <span className="text-[10px] text-[#74727A]">
                                   {route.coverage.toFixed(
                                     0,
                                   )}
@@ -1084,7 +1084,7 @@ export default function Analytics() {
                                   key,
                                 )
                               }
-                              className="rounded-lg border border-[#D0D5DD] px-3 py-1.5 text-[10px] font-semibold text-[#344054] transition hover:border-[#155EEF] hover:text-[#155EEF]"
+                              className="rounded-lg border border-[#CDC5BB] px-3 py-1.5 text-[10px] font-semibold text-[#4B4851] transition hover:border-[#6B5A78] hover:text-[#6B5A78]"
                             >
                               Analyze
                             </button>
@@ -1097,19 +1097,19 @@ export default function Analytics() {
               </table>
 
               {filteredRouteSignals.length === 0 && (
-                <div className="py-10 text-center text-xs text-[#667085]">
+                <div className="py-10 text-center text-xs text-[#74727A]">
                   No routes match your search.
                 </div>
               )}
             </div>
 
-            <div className="mt-4 flex items-start gap-2 rounded-xl border border-[#E4E7EC] bg-[#F9FAFB] p-4">
+            <div className="mt-4 flex items-start gap-2 rounded-xl border border-[#DCD7CE] bg-[#F6F2EC] p-4">
               <Info
                 size={14}
-                className="mt-0.5 shrink-0 text-[#155EEF]"
+                className="mt-0.5 shrink-0 text-[#6B5A78]"
               />
 
-              <p className="text-[11px] leading-5 text-[#667085]">
+              <p className="text-[11px] leading-5 text-[#74727A]">
                 Route APIx values describe movement for an
                 individual route. The national index combines
                 covered routes using their DGCA passenger-volume
@@ -1131,7 +1131,7 @@ export default function Analytics() {
                   Advance-purchase behavior
                 </h2>
 
-                <p className="mt-1 text-xs leading-5 text-[#667085]">
+                <p className="mt-1 text-xs leading-5 text-[#74727A]">
                   Compare real observed fares for one
                   representative route across the six APIx booking
                   horizons.
@@ -1143,7 +1143,7 @@ export default function Analytics() {
                 onChange={(event) =>
                   setSelectedRoute(event.target.value)
                 }
-                className="h-10 min-w-[220px] rounded-lg border border-[#D0D5DD] bg-white px-3 text-xs font-semibold text-[#172033] outline-none focus:border-[#155EEF] focus:ring-2 focus:ring-[#155EEF]/10"
+                className="h-10 min-w-[220px] rounded-lg border border-[#CDC5BB] bg-white px-3 text-xs font-semibold text-[#30313A] outline-none focus:border-[#6B5A78] focus:ring-2 focus:ring-[#6B5A78]/10"
               >
                 {routeOptions.length > 0 ? (
                   routeOptions.map((route) => (
@@ -1163,12 +1163,12 @@ export default function Analytics() {
             </div>
 
             <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
-              <div className="rounded-xl border border-[#E4E7EC] bg-[#F9FAFB] p-4">
-                <div className="text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+              <div className="rounded-xl border border-[#DCD7CE] bg-[#F6F2EC] p-4">
+                <div className="text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                   Route APIx
                 </div>
 
-                <div className="mt-2 text-xl font-semibold text-[#172033]">
+                <div className="mt-2 text-xl font-semibold text-[#30313A]">
                   {selectedRouteSignal?.index ===
                   null ||
                   selectedRouteSignal?.index ===
@@ -1179,17 +1179,17 @@ export default function Analytics() {
                       )}
                 </div>
 
-                <div className="mt-1 text-[10px] text-[#667085]">
+                <div className="mt-1 text-[10px] text-[#74727A]">
                   current route signal
                 </div>
               </div>
 
-              <div className="rounded-xl border border-[#E4E7EC] bg-[#F9FAFB] p-4">
-                <div className="text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+              <div className="rounded-xl border border-[#DCD7CE] bg-[#F6F2EC] p-4">
+                <div className="text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                   Coverage
                 </div>
 
-                <div className="mt-2 text-xl font-semibold text-[#172033]">
+                <div className="mt-2 text-xl font-semibold text-[#30313A]">
                   {selectedRouteCoverage ===
                   null
                     ? '—'
@@ -1198,17 +1198,17 @@ export default function Analytics() {
                       )}%`}
                 </div>
 
-                <div className="mt-1 text-[10px] text-[#667085]">
+                <div className="mt-1 text-[10px] text-[#74727A]">
                   eligible route coverage
                 </div>
               </div>
 
-              <div className="rounded-xl border border-[#E4E7EC] bg-[#F9FAFB] p-4">
-                <div className="text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+              <div className="rounded-xl border border-[#DCD7CE] bg-[#F6F2EC] p-4">
+                <div className="text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                   Basket weight
                 </div>
 
-                <div className="mt-2 text-xl font-semibold text-[#172033]">
+                <div className="mt-2 text-xl font-semibold text-[#30313A]">
                   {selectedRouteWeight ===
                   null
                     ? '—'
@@ -1218,23 +1218,23 @@ export default function Analytics() {
                       ).toFixed(2)}%`}
                 </div>
 
-                <div className="mt-1 text-[10px] text-[#667085]">
+                <div className="mt-1 text-[10px] text-[#74727A]">
                   DGCA passenger volume
                 </div>
               </div>
 
-              <div className="rounded-xl border border-[#E4E7EC] bg-[#F9FAFB] p-4">
-                <div className="text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+              <div className="rounded-xl border border-[#DCD7CE] bg-[#F6F2EC] p-4">
+                <div className="text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                   Average fare
                 </div>
 
-                <div className="mt-2 text-xl font-semibold text-[#172033]">
+                <div className="mt-2 text-xl font-semibold text-[#30313A]">
                   {formatCurrency(
                     routeAverageFare,
                   )}
                 </div>
 
-                <div className="mt-1 text-[10px] text-[#667085]">
+                <div className="mt-1 text-[10px] text-[#74727A]">
                   valid observed fares
                 </div>
               </div>
@@ -1249,17 +1249,17 @@ export default function Analytics() {
                 />
               </div>
             ) : (
-              <div className="mt-5 rounded-xl border border-dashed border-[#D0D5DD] bg-[#FAFBFC] px-6 py-10 text-center">
+              <div className="mt-5 rounded-xl border border-dashed border-[#CDC5BB] bg-[#F6F2EC] px-6 py-10 text-center">
                 <BarChart3
                   size={24}
-                  className="mx-auto text-[#98A2B3]"
+                  className="mx-auto text-[#9A9499]"
                 />
 
-                <div className="mt-3 text-sm font-semibold text-[#344054]">
+                <div className="mt-3 text-sm font-semibold text-[#4B4851]">
                   No route-level fare history available
                 </div>
 
-                <p className="mx-auto mt-2 max-w-md text-xs leading-5 text-[#667085]">
+                <p className="mx-auto mt-2 max-w-md text-xs leading-5 text-[#74727A]">
                   Select a route with real valid observations to
                   inspect its advance-purchase behavior.
                 </p>
@@ -1273,7 +1273,7 @@ export default function Analytics() {
               <div className="flex items-center gap-2">
                 <Gauge
                   size={15}
-                  className="text-[#155EEF]"
+                  className="text-[#6B5A78]"
                 />
 
                 <div className="section-label">
@@ -1281,7 +1281,7 @@ export default function Analytics() {
                 </div>
               </div>
 
-              <p className="mt-3 text-xs leading-6 text-[#667085]">
+              <p className="mt-3 text-xs leading-6 text-[#74727A]">
                 APIx uses 100 as its prototype base index. Values
                 above 100 indicate observed airfare levels above the
                 reference level, while values below 100 indicate
@@ -1293,7 +1293,7 @@ export default function Analytics() {
               <div className="flex items-center gap-2">
                 <Network
                   size={15}
-                  className="text-[#0E9F9A]"
+                  className="text-[#718A78]"
                 />
 
                 <div className="section-label">
@@ -1301,7 +1301,7 @@ export default function Analytics() {
                 </div>
               </div>
 
-              <p className="mt-3 text-xs leading-6 text-[#667085]">
+              <p className="mt-3 text-xs leading-6 text-[#74727A]">
                 National coverage represents the passenger-volume
                 weight of routes with sufficient eligible data.
                 Missing routes remain uncovered instead of receiving
@@ -1313,7 +1313,7 @@ export default function Analytics() {
               <div className="flex items-center gap-2">
                 <BarChart3
                   size={15}
-                  className="text-[#667085]"
+                  className="text-[#74727A]"
                 />
 
                 <div className="section-label">
@@ -1321,7 +1321,7 @@ export default function Analytics() {
                 </div>
               </div>
 
-              <p className="mt-3 text-xs leading-6 text-[#667085]">
+              <p className="mt-3 text-xs leading-6 text-[#74727A]">
                 The lead-time analysis shows how observed fares vary
                 across T+1, T+7, T+15, T+21, T+30 and T+45 days
                 before travel.

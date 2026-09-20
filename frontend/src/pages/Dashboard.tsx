@@ -202,9 +202,9 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="space-y-8 bg-[#F8FAFC] min-h-screen pb-12 text-[#172033]">
+    <div className="page-shell max-w-none space-y-8 pb-12 text-[#30313A]">
       {/* HEADER */}
-      <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between border-b border-slate-200/80 pb-6">
+      <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between border-b border-[#DCD7CE] pb-6">
         <div>
           <div className="flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] uppercase text-blue-600">
             <Activity className="h-4 w-4" />
@@ -238,20 +238,21 @@ export default function Dashboard() {
       {/* HERO METRICS - Explicit Context Bento */}
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
         {/* National Index Hero */}
-        <div className="relative overflow-hidden rounded-3xl bg-slate-900 p-7 text-white shadow-xl lg:col-span-7 flex flex-col justify-between">
-          <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue-500/15 blur-3xl" />
-          
-          <div>
+        <div className="relative overflow-hidden rounded-3xl border border-[#D3C6D9] bg-[#E8E0EA] p-7 text-[#403546] shadow-[0_16px_34px_rgba(79,65,84,.07)] lg:col-span-7 flex flex-col justify-between">
+          <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#BDA9C8]/25 blur-3xl" />
+          <div className="absolute -bottom-24 -left-16 h-52 w-52 rounded-full bg-[#B9C6B9]/20 blur-3xl" />
+
+          <div className="relative">
             <div className="flex items-start justify-between">
               <div>
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-400">
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#716878]">
                   <GlobeIcon /> National APIx
                 </div>
-                <div className="mt-1 text-xs text-slate-400">Base index = 100.00 • {formatDate(latestNational?.observation_date)}</div>
+                <div className="mt-1 text-xs text-[#8C8490]">Base index = 100.00 • {formatDate(latestNational?.observation_date)}</div>
               </div>
-              
+
               {nationalChange !== null && (
-                <div className={`flex items-center gap-1 rounded-full px-3 py-1 text-xs font-bold ${nationalChange >= 0 ? 'bg-rose-500/20 text-rose-400' : 'bg-emerald-500/20 text-emerald-400'}`}>
+                <div className={`flex items-center gap-1 rounded-full border px-3 py-1 text-xs font-bold ${nationalChange >= 0 ? 'bg-[#F7ECEA] text-[#A85C57] border-[#E7C1BC]' : 'bg-[#EEF5F0] text-[#4E8066] border-[#C5DDCC]'}`}>
                   {nationalChange >= 0 ? <ArrowUpRight className="h-3.5 w-3.5" /> : <ArrowDownRight className="h-3.5 w-3.5" />}
                   {nationalChange >= 0 ? '+' : ''}{nationalChange.toFixed(2)} pts
                 </div>
@@ -259,40 +260,39 @@ export default function Dashboard() {
             </div>
 
             <div className="mt-6 flex items-baseline gap-4">
-              <span className="text-[72px] font-bold leading-none tracking-tighter text-white">
+              <span className="text-[72px] font-bold leading-none tracking-tighter text-[#403546]">
                 {latestNational ? latestNational.index.toFixed(2) : '100.00'}
               </span>
-              <span className="text-sm font-semibold text-slate-400">pts</span>
+              <span className="text-sm font-semibold text-[#7C7380]">pts</span>
             </div>
 
-            {/* Concept Explanation Box */}
-            <div className="mt-4 rounded-2xl bg-slate-800/80 border border-slate-700/60 p-3.5 text-xs text-slate-300 leading-relaxed">
-              <div className="font-bold text-white mb-0.5 flex items-center gap-1.5">
-                <Info className="h-3.5 w-3.5 text-blue-400 shrink-0" />
+            <div className="mt-4 rounded-2xl border border-[#D7CADA] bg-[#F4EDF5]/80 p-3.5 text-xs leading-relaxed text-[#655D69]">
+              <div className="mb-0.5 flex items-center gap-1.5 font-bold text-[#403546]">
+                <Info className="h-3.5 w-3.5 shrink-0 text-[#6B5A78]" />
                 What is APIx?
               </div>
               APIx measures how domestic airfare prices are moving relative to the prototype base period of 100. A value above 100 indicates higher observed fare levels relative to the base.
             </div>
           </div>
 
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-slate-800 pt-5">
+          <div className="relative mt-8 grid grid-cols-1 gap-4 border-t border-[#D6CADB] pt-5 sm:grid-cols-2">
             <div>
-              <div className="flex justify-between text-xs font-semibold text-slate-300 mb-1">
+              <div className="mb-1 flex justify-between text-xs font-semibold text-[#655D69]">
                 <span>Weighted Route Coverage</span>
-                <span className="text-white font-bold">{formatNumber(nationalCoverage * 100, 1)}%</span>
+                <span className="font-bold text-[#403546]">{formatNumber(nationalCoverage * 100, 1)}%</span>
               </div>
-              <div className="h-2 w-full overflow-hidden rounded-full bg-slate-800 mb-2">
-                <div className="h-full rounded-full bg-blue-500 transition-all duration-1000" style={{ width: `${Math.min(100, nationalCoverage * 100)}%` }} />
+              <div className="mb-2 h-2 w-full overflow-hidden rounded-full bg-[#D9CEDC]">
+                <div className="h-full rounded-full bg-[#6B5A78] transition-all duration-1000" style={{ width: `${Math.min(100, nationalCoverage * 100)}%` }} />
               </div>
-              <p className="text-[11px] text-slate-400 leading-normal">
+              <p className="text-[11px] leading-normal text-[#837A86]">
                 {representedRoutes} of {activeRoutesCount} representative routes currently have sufficient valid data for national aggregation. Routes without adequate observations are excluded rather than estimated.
               </p>
             </div>
 
             <div>
-              <div className="text-xs font-semibold text-slate-300 mb-1">Observations Used</div>
-              <div className="text-xl font-bold text-white mb-1">{formatNumber(latestNational?.observations_used || 0)}</div>
-              <p className="text-[11px] text-slate-400 leading-normal">
+              <div className="mb-1 text-xs font-semibold text-[#655D69]">Observations Used</div>
+              <div className="mb-1 text-xl font-bold text-[#403546]">{formatNumber(latestNational?.observations_used || 0)}</div>
+              <p className="text-[11px] leading-normal text-[#837A86]">
                 Valid airfare observations currently eligible for index calculation after validation and quality checks.
               </p>
             </div>

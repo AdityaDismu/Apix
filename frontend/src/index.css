@@ -101,3 +101,525 @@ body {
 .pipeline-node-final{background:#155EEF;border-color:#155EEF;color:#fff}
 .skeleton-card{background:linear-gradient(90deg,#E4E7EC 25%,#F2F4F7 50%,#E4E7EC 75%);background-size:200% 100%;animation:shimmer 1.5s infinite}
 @media(max-width:640px){.page-shell{padding:18px 14px 42px}.page-header-row{flex-direction:column}.page-title{font-size:23px}}
+
+/* --------------------------------------------------------------------------
+   APIx application-shell redesign
+   The landing page intentionally keeps the original global theme. These
+   variables are inherited only by pages rendered inside .app-shell.
+   -------------------------------------------------------------------------- */
+.app-shell {
+  --color-white: #FBF9F4;
+  --color-black: #27262A;
+  --color-slate-50: #F7F4EF;
+  --color-slate-100: #F0ECE6;
+  --color-slate-200: #E1DBD2;
+  --color-slate-300: #CDC5BB;
+  --color-slate-400: #A9A19A;
+  --color-slate-500: #7E7A80;
+  --color-slate-600: #66636C;
+  --color-slate-700: #504D56;
+  --color-slate-800: #6E6471;
+  --color-slate-900: #756978;
+  --color-slate-950: #4A434D;
+
+  --color-blue-50: #F1EDF4;
+  --color-blue-100: #E9E1ED;
+  --color-blue-200: #D9CDE0;
+  --color-blue-300: #C2AFCC;
+  --color-blue-400: #A68CB3;
+  --color-blue-500: #7F6B8A;
+  --color-blue-600: #6B5A78;
+  --color-blue-700: #5C4C67;
+  --color-blue-800: #4D4056;
+  --color-blue-900: #403546;
+  --color-blue-950: #332A38;
+
+  --color-indigo-50: #F1EDF4;
+  --color-indigo-100: #E9E1ED;
+  --color-indigo-200: #D9CDE0;
+  --color-indigo-300: #C2AFCC;
+  --color-indigo-400: #A68CB3;
+  --color-indigo-500: #7F6B8A;
+  --color-indigo-600: #6B5A78;
+  --color-indigo-700: #5C4C67;
+  --color-indigo-800: #4D4056;
+  --color-indigo-900: #403546;
+
+  --color-emerald-50: #EEF5F0;
+  --color-emerald-100: #DCEBE0;
+  --color-emerald-200: #C5DDCC;
+  --color-emerald-300: #A3C5AE;
+  --color-emerald-400: #74A385;
+  --color-emerald-500: #5D8D70;
+  --color-emerald-600: #4E8066;
+  --color-emerald-700: #416B56;
+  --color-emerald-800: #355744;
+
+  --color-green-50: #EEF5F0;
+  --color-green-100: #DCEBE0;
+  --color-green-500: #5D8D70;
+  --color-green-600: #4E8066;
+  --color-green-700: #416B56;
+
+  --color-amber-50: #F7F2E7;
+  --color-amber-100: #EDE1C7;
+  --color-amber-200: #E1CFAB;
+  --color-amber-400: #BD8F4A;
+  --color-amber-500: #A87535;
+  --color-amber-600: #95672D;
+  --color-amber-700: #7E5528;
+
+  --color-rose-50: #F7ECEA;
+  --color-rose-100: #F0DAD7;
+  --color-rose-200: #E7C1BC;
+  --color-rose-300: #D99C94;
+  --color-rose-400: #BD756D;
+  --color-rose-500: #B26760;
+  --color-rose-600: #A85C57;
+  --color-rose-700: #8F4C48;
+
+  --color-red-50: #F7ECEA;
+  --color-red-100: #F0DAD7;
+  --color-red-500: #B26760;
+  --color-red-600: #A85C57;
+  --color-red-700: #8F4C48;
+
+  --color-teal-50: #EEF4EF;
+  --color-teal-100: #DCEBE0;
+  --color-teal-200: #C5DDCC;
+  --color-teal-300: #A3C5AE;
+  --color-teal-400: #7FA18A;
+  --color-teal-500: #718A78;
+  --color-teal-600: #617966;
+  --color-teal-700: #526654;
+  --color-teal-800: #465647;
+  --color-teal-900: #3B493D;
+
+  min-height: 100vh;
+  font-family: 'Manrope', system-ui, sans-serif;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(107, 90, 120, .06), transparent 28%),
+    radial-gradient(circle at 92% 6%, rgba(113, 138, 120, .06), transparent 24%),
+    #EEEAE3;
+  color: #30313A;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.app-shell ::selection {
+  background: #D8CCDE;
+  color: #403546;
+}
+
+.app-shell .font-mono {
+  font-family: 'DM Mono', monospace;
+}
+
+.app-shell .skeleton {
+  background: linear-gradient(90deg, #E6E0D8 25%, #F5F1EB 50%, #E6E0D8 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 6px;
+}
+
+.app-shell .page-shell {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 30px 28px 64px;
+}
+
+.app-shell .page-title {
+  font-size: 29px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -.04em;
+  color: #30313A;
+}
+
+.app-shell .page-subtitle {
+  margin-top: 8px;
+  max-width: 800px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #74727A;
+}
+
+.app-shell .section-label {
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: #8A8489;
+}
+
+.app-shell .card-title {
+  font-size: 14px;
+  font-weight: 750;
+  color: #30313A;
+}
+
+.app-shell .metric-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: #9A9499;
+}
+
+.app-shell .metric-value {
+  font-family: 'DM Mono', monospace;
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 500;
+  color: #30313A;
+}
+
+.app-shell .metric-sub {
+  font-size: 10px;
+  color: #74727A;
+  margin-top: 4px;
+}
+
+.app-shell .button-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid #DCD7CE;
+  background: rgba(251, 249, 244, .92);
+  border-radius: 11px;
+  padding: 9px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #5B5760;
+  transition: transform .15s ease, border-color .15s ease, background .15s ease, color .15s ease, box-shadow .15s ease;
+}
+
+.app-shell .button-secondary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  border-color: #C9B8D1;
+  color: #6B5A78;
+  background: #FCFAF7;
+  box-shadow: 0 8px 20px rgba(76, 63, 80, .06);
+}
+
+.app-shell .button-secondary:disabled {
+  opacity: .55;
+}
+
+.app-shell .button-link {
+  margin-top: 14px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #6B5A78;
+}
+
+.app-shell .card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.app-shell .alert-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 13px 15px;
+  margin-bottom: 18px;
+  border: 1px solid #E7C1BC;
+  border-radius: 14px;
+  background: #F8ECE9;
+  color: #8F4C48;
+  font-size: 12px;
+  line-height: 1.55;
+  box-shadow: 0 8px 22px rgba(90, 60, 56, .04);
+}
+
+.app-shell .field-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: #7F7A80;
+}
+
+.app-shell .field-select {
+  appearance: none;
+  min-width: 130px;
+  padding: 9px 32px 9px 11px;
+  border: 1px solid #DCD7CE;
+  border-radius: 10px;
+  background: #FBF9F4;
+  font-size: 12px;
+  font-weight: 700;
+  color: #30313A;
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.app-shell .field-select:focus {
+  border-color: #BBA8C5;
+  box-shadow: 0 0 0 3px rgba(107, 90, 120, .10);
+}
+
+.app-shell .field-chevron {
+  position: absolute;
+  right: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 13px;
+  height: 13px;
+  color: #928C92;
+  pointer-events: none;
+}
+
+.app-shell .field-search {
+  position: absolute;
+  left: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 13px;
+  height: 13px;
+  color: #A6A0A3;
+  pointer-events: none;
+}
+
+.app-shell .data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.app-shell .data-table th {
+  text-align: left;
+  padding: 11px 14px;
+  background: #F6F2EC;
+  border-bottom: 1px solid #DCD7CE;
+  color: #7E787D;
+  font-weight: 800;
+}
+
+.app-shell .data-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #ECE8E1;
+  color: #4B4851;
+}
+
+.app-shell .data-table tbody tr {
+  transition: background .12s ease;
+}
+
+.app-shell .data-table tbody tr:hover {
+  background: #FAF7F2;
+}
+
+.app-shell .tag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 8px;
+  background: #F0ECE6;
+  color: #6D6870;
+  padding: 4px 7px;
+  font-size: 10px;
+}
+
+.app-shell .tag-blue {
+  background: #EEE8F2;
+  color: #675571;
+}
+
+.app-shell .icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33px;
+  height: 33px;
+  border: 1px solid #DCD7CE;
+  border-radius: 10px;
+  color: #6F6B72;
+  background: rgba(251, 249, 244, .7);
+  transition: all .15s ease;
+}
+
+.app-shell .icon-button:hover {
+  border-color: #C9B8D1;
+  color: #6B5A78;
+  transform: translateY(-1px);
+}
+
+.app-shell .pipeline-node {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #DCD7CE;
+  background: #F7F4EF;
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #5F5A63;
+}
+
+.app-shell .pipeline-node-final {
+  background: #6B5A78;
+  border-color: #6B5A78;
+  color: #FBF9F4;
+}
+
+@media(max-width: 900px) {
+  .app-shell .page-shell { padding: 24px 18px 52px; }
+}
+
+@media(max-width: 640px) {
+  .app-shell .page-shell { padding: 18px 14px 42px; }
+  .app-shell .page-header-row { flex-direction: column; }
+  .app-shell .page-title { font-size: 24px; }
+}
+
+/* =========================================
+   GLOBAL TEXT VISIBILITY OVERRIDE
+   Keeps the existing warm editorial theme
+   but makes text darker and easier to read.
+   ========================================= */
+
+body {
+  color: #29242a;
+}
+
+/* Main headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #211c22;
+}
+
+/* Normal text */
+p,
+span,
+li,
+label,
+small {
+  color: #3d363e;
+}
+
+/* Secondary / muted text */
+.text-muted,
+.text-secondary,
+.muted,
+[class*="text-muted"],
+[class*="text-secondary"] {
+  color: #5a5159;
+}
+
+/* Form labels */
+label {
+  color: #302a31;
+}
+
+/* Table text */
+table,
+thead,
+tbody,
+th,
+td {
+  color: #332d34;
+}
+
+/* Buttons */
+button {
+  color: #29242a;
+}
+
+/* Links */
+a {
+  color: #3f3540;
+}
+
+/* Placeholder text */
+input::placeholder,
+textarea::placeholder {
+  color: #756b73;
+  opacity: 1;
+}
+
+/* =========================================
+   LANDING PAGE
+   Restore its original text colors
+   ========================================= */
+
+.landing-page {
+  color: revert;
+}
+
+/* Headings */
+.landing-page h1,
+.landing-page h2,
+.landing-page h3,
+.landing-page h4,
+.landing-page h5,
+.landing-page h6 {
+  color: revert;
+}
+
+/* General text */
+.landing-page p,
+.landing-page span,
+.landing-page a,
+.landing-page label {
+  color: revert;
+}
+
+/* Tailwind muted text classes used elsewhere */
+.landing-page .text-slate-300 {
+  color: rgb(203 213 225) !important;
+}
+
+.landing-page .text-slate-200 {
+  color: rgb(226 232 240) !important;
+}
+
+.landing-page .text-slate-400 {
+  color: rgb(148 163 184) !important;
+}
+
+.landing-page .text-white {
+  color: #ffffff !important;
+}
+
+/* Explicit custom colors used by the landing page */
+.landing-page .text-\[\#172033\] {
+  color: #172033 !important;
+}
+
+.landing-page .text-\[\#667085\] {
+  color: #667085 !important;
+}
+
+.landing-page .text-\[\#98A2B3\] {
+  color: #98A2B3 !important;
+}
+
+.landing-page .text-\[\#B8C0CF\] {
+  color: #B8C0CF !important;
+}
+
+.landing-page .text-\[\#155EEF\] {
+  color: #155EEF !important;
+}
+
+.landing-page .text-\[\#0E9F9A\] {
+  color: #0E9F9A !important;
+}
+
+.landing-page .text-\[\#38BDF8\] {
+  color: #38BDF8 !important;
+}

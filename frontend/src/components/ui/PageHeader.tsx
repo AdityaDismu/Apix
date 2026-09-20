@@ -9,17 +9,16 @@ interface PageHeaderProps {
 
 export default function PageHeader({ title, subtitle, actions, tag }: PageHeaderProps) {
   return (
-    <div className="flex items-start justify-between gap-4 mb-6">
-      <div>
+    <div className="mb-7 flex items-end justify-between gap-5 border-b border-[#DCD7CE] pb-5">
+      <div className="min-w-0">
         {tag && (
-          <span className="inline-block text-[10px] font-bold tracking-widest uppercase text-[#155EEF] mb-2">
+          <span className="mb-2 inline-flex items-center gap-2 rounded-full bg-[#EEE8F2] px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-[0.14em] text-[#675571]">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#8F7BA0]" />
             {tag}
           </span>
         )}
-        <h1 className="text-xl font-bold text-[#172033] leading-tight">{title}</h1>
-        {subtitle && (
-          <p className="text-sm text-[#667085] mt-1 leading-relaxed max-w-2xl">{subtitle}</p>
-        )}
+        <h1 className="page-title">{title}</h1>
+        {subtitle && <p className="page-subtitle">{subtitle}</p>}
       </div>
       {actions && <div className="shrink-0">{actions}</div>}
     </div>

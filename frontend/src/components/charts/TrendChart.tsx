@@ -26,7 +26,7 @@ function CustomTooltip({ active, payload }: { active?: boolean; payload?: Array<
   const date = new Date(d.timestamp);
 
   return (
-    <div className="bg-slate-900 border border-slate-700 rounded-xl shadow-xl p-4 text-xs min-w-[180px] text-white">
+    <div className="bg-[#403946] border-[#655B68] rounded-xl shadow-xl p-4 text-xs min-w-[180px] text-white">
       <div className="font-bold mb-2 border-b border-slate-700 pb-2">
         {date.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
         <span className="block text-[10px] font-medium text-slate-400 mt-0.5">
@@ -102,18 +102,18 @@ export default function TrendChart({ data, title = 'Airfare Price Index History'
           <AreaChart data={filteredData} margin={{ top: 10, right: 10, bottom: 0, left: -20 }}>
             <defs>
               <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#3B82F6" stopOpacity={0.3} />
-                <stop offset="95%" stopColor="#3B82F6" stopOpacity={0.0} />
+                <stop offset="5%" stopColor="#7A687F" stopOpacity={0.3} />
+                <stop offset="95%" stopColor="#7A687F" stopOpacity={0.0} />
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="#F1F5F9" vertical={false} />
+            <CartesianGrid strokeDasharray="3 3" stroke="#F0ECE6" vertical={false} />
             <XAxis
               dataKey="timestamp"
               tickFormatter={v => {
                 const d = new Date(v);
                 return period === '1D' ? d.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' }) : d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
               }}
-              tick={{ fill: '#94A3B8', fontSize: 11, fontWeight: 600 }}
+              tick={{ fill: '#9B959A', fontSize: 11, fontWeight: 600 }}
               axisLine={false}
               tickLine={false}
               dy={10}
@@ -121,20 +121,20 @@ export default function TrendChart({ data, title = 'Airfare Price Index History'
             <YAxis
               domain={['dataMin - 2', 'dataMax + 2']}
               tickFormatter={v => v.toFixed(0)}
-              tick={{ fill: '#94A3B8', fontSize: 11, fontWeight: 600 }}
+              tick={{ fill: '#9B959A', fontSize: 11, fontWeight: 600 }}
               axisLine={false}
               tickLine={false}
               width={40}
             />
-            <Tooltip content={<CustomTooltip />} cursor={{ stroke: '#CBD5E1', strokeWidth: 1, strokeDasharray: '4 4' }} />
+            <Tooltip content={<CustomTooltip />} cursor={{ stroke: '#CFC8BF', strokeWidth: 1, strokeDasharray: '4 4' }} />
             <Area
               type="monotone"
               dataKey="value"
-              stroke="#2563EB"
+              stroke="#7A687F"
               strokeWidth={3}
               fillOpacity={1}
               fill="url(#colorValue)"
-              activeDot={{ r: 6, fill: '#2563EB', stroke: '#FFFFFF', strokeWidth: 3, shadow: '0 4px 10px rgba(0,0,0,0.2)' }}
+              activeDot={{ r: 6, fill: '#7A687F', stroke: '#FBF9F4', strokeWidth: 3, shadow: '0 4px 10px rgba(0,0,0,0.2)' }}
             />
           </AreaChart>
         </ResponsiveContainer>

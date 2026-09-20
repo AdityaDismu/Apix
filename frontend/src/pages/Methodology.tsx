@@ -37,21 +37,21 @@ function Step({
   Icon: React.ElementType;
 }) {
   return (
-    <div className="relative flex flex-col rounded-2xl border border-[#E4E7EC] bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
+    <div className="relative flex flex-col rounded-2xl border border-[#DCD7CE] bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
       <div className="mb-5 flex items-start justify-between">
-        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F0F6FF] text-[#155EEF] shadow-sm">
+        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F5F1EB] text-[#6B5A78] shadow-sm">
           <Icon size={24} strokeWidth={2} />
         </div>
-        <div className="font-mono text-3xl font-black text-[#F2F4F7] select-none">
+        <div className="font-mono text-3xl font-black text-[#ECE8E1] select-none">
           {n}
         </div>
       </div>
 
-      <h3 className="text-base font-bold text-[#172033]">
+      <h3 className="text-base font-bold text-[#30313A]">
         {title}
       </h3>
 
-      <p className="mt-3 text-sm leading-6 text-[#475467] flex-1">
+      <p className="mt-3 text-sm leading-6 text-[#5F5A63] flex-1">
         {text}
       </p>
     </div>
@@ -68,22 +68,22 @@ function Formula({
   note: string;
 }) {
   return (
-    <div className="flex flex-col overflow-hidden rounded-2xl border border-[#E4E7EC] bg-white shadow-sm transition-shadow hover:shadow-md">
-      <div className="border-b border-[#E4E7EC] bg-[#F9FAFB] px-5 py-3.5 flex items-center justify-between">
-        <h4 className="text-sm font-bold text-[#172033]">{title}</h4>
-        <Calculator size={14} className="text-[#98A2B3]" />
+    <div className="flex flex-col overflow-hidden rounded-2xl border border-[#DCD7CE] bg-white shadow-sm transition-shadow hover:shadow-md">
+      <div className="border-b border-[#DCD7CE] bg-[#F6F2EC] px-5 py-3.5 flex items-center justify-between">
+        <h4 className="text-sm font-bold text-[#30313A]">{title}</h4>
+        <Calculator size={14} className="text-[#9A9499]" />
       </div>
       
-      <div className="flex-1 bg-[#0C111D] p-6 flex items-center justify-center relative overflow-hidden">
+      <div className="flex-1 bg-[#5C5260] p-6 flex items-center justify-center relative overflow-hidden">
         {/* Subtle background grid effect */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1F2937_1px,transparent_1px),linear-gradient(to_bottom,#1F2937_1px,transparent_1px)] bg-[size:1rem_1rem] opacity-20"></div>
-        <div className="relative z-10 w-full overflow-x-auto text-center font-mono text-[15px] sm:text-base tracking-wide text-[#32D583] py-2 whitespace-nowrap">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#4B4851_1px,transparent_1px),linear-gradient(to_bottom,#4B4851_1px,transparent_1px)] bg-[size:1rem_1rem] opacity-20"></div>
+        <div className="relative z-10 w-full overflow-x-auto text-center font-mono text-[15px] sm:text-base tracking-wide text-[#74A385] py-2 whitespace-nowrap">
           {formula}
         </div>
       </div>
 
-      <div className="border-t border-[#E4E7EC] bg-white px-5 py-4">
-        <p className="text-xs leading-5 text-[#667085]">
+      <div className="border-t border-[#DCD7CE] bg-white px-5 py-4">
+        <p className="text-xs leading-5 text-[#74727A]">
           {note}
         </p>
       </div>
@@ -110,14 +110,14 @@ export default function Methodology() {
   return (
     <div className="page-shell">
       <div className="mb-6">
-        <div className="inline-flex items-center gap-2 rounded-full border border-[#E4E7EC] bg-white px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-[#667085] shadow-sm mb-3">
-          <BookOpen size={12} className="text-[#155EEF]" />
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#DCD7CE] bg-white px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-[#74727A] shadow-sm mb-3">
+          <BookOpen size={12} className="text-[#6B5A78]" />
           TECHNICAL DOCUMENTATION
         </div>
-        <h1 className="text-3xl font-bold tracking-tight text-[#172033] sm:text-4xl">
+        <h1 className="text-3xl font-bold tracking-tight text-[#30313A] sm:text-4xl">
           APIx Methodology
         </h1>
-        <p className="mt-3 max-w-3xl text-sm leading-6 text-[#667085]">
+        <p className="mt-3 max-w-3xl text-sm leading-6 text-[#74727A]">
           The implemented statistical path from live airfare observations to route, national and periodic indicators.
         </p>
       </div>
@@ -129,37 +129,37 @@ export default function Methodology() {
         </div>
       ) : !m ? (
         <div className="py-24 text-center">
-          <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-[#155EEF] border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]" role="status"></div>
-          <div className="mt-4 text-sm font-medium text-[#667085]">Loading backend methodology…</div>
+          <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-[#6B5A78] border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]" role="status"></div>
+          <div className="mt-4 text-sm font-medium text-[#74727A]">Loading backend methodology…</div>
         </div>
       ) : (
         <div className="space-y-8">
           {/* Methodology summary banner */}
-          <div className="overflow-hidden rounded-2xl border border-[#E4E7EC] bg-white shadow-sm">
-            <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#E4E7EC]">
-              <div className="p-5 flex flex-col justify-center bg-[#F9FAFB]">
-                <div className="text-[10px] font-bold uppercase tracking-wide text-[#667085] mb-1">Version</div>
-                <div className="text-xl font-bold text-[#172033]">{m.version}</div>
+          <div className="overflow-hidden rounded-2xl border border-[#DCD7CE] bg-white shadow-sm">
+            <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#DCD7CE]">
+              <div className="p-5 flex flex-col justify-center bg-[#F6F2EC]">
+                <div className="text-[10px] font-bold uppercase tracking-wide text-[#74727A] mb-1">Version</div>
+                <div className="text-xl font-bold text-[#30313A]">{m.version}</div>
               </div>
-              <div className="p-5 flex flex-col justify-center bg-[#F9FAFB]">
-                <div className="text-[10px] font-bold uppercase tracking-wide text-[#667085] mb-1">Base Index</div>
-                <div className="text-xl font-bold text-[#172033]">{m.base_index}</div>
+              <div className="p-5 flex flex-col justify-center bg-[#F6F2EC]">
+                <div className="text-[10px] font-bold uppercase tracking-wide text-[#74727A] mb-1">Base Index</div>
+                <div className="text-xl font-bold text-[#30313A]">{m.base_index}</div>
               </div>
-              <div className="p-5 flex flex-col justify-center bg-[#F9FAFB]">
-                <div className="text-[10px] font-bold uppercase tracking-wide text-[#667085] mb-1">Lead-time Windows</div>
+              <div className="p-5 flex flex-col justify-center bg-[#F6F2EC]">
+                <div className="text-[10px] font-bold uppercase tracking-wide text-[#74727A] mb-1">Lead-time Windows</div>
                 <div className="flex flex-wrap gap-1.5 mt-1">
                   {m.lead_time_windows.map((x) => (
-                    <span key={x} className="inline-flex items-center rounded-md bg-[#EEF4FF] px-2 py-1 text-[11px] font-semibold text-[#155EEF]">
+                    <span key={x} className="inline-flex items-center rounded-md bg-[#EEE8F2] px-2 py-1 text-[11px] font-semibold text-[#6B5A78]">
                       T+{x}
                     </span>
                   ))}
                 </div>
               </div>
             </div>
-            <div className="border-t border-[#E4E7EC] p-5">
+            <div className="border-t border-[#DCD7CE] p-5">
               <div className="flex gap-3 items-start">
-                <Info size={18} className="text-[#155EEF] shrink-0 mt-0.5" />
-                <p className="text-sm leading-6 text-[#475467]">
+                <Info size={18} className="text-[#6B5A78] shrink-0 mt-0.5" />
+                <p className="text-sm leading-6 text-[#5F5A63]">
                   {m.cpi_relationship}
                 </p>
               </div>
@@ -169,8 +169,8 @@ export default function Methodology() {
           {/* Methodology flow */}
           <div>
             <div className="mb-4 flex items-center gap-2">
-              <Layers size={18} className="text-[#155EEF]" />
-              <h2 className="text-lg font-bold text-[#172033]">Data Processing Pipeline</h2>
+              <Layers size={18} className="text-[#6B5A78]" />
+              <h2 className="text-lg font-bold text-[#30313A]">Data Processing Pipeline</h2>
             </div>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
               <Step
@@ -215,8 +215,8 @@ export default function Methodology() {
           {/* Core formulas */}
           <div>
             <div className="mb-4 flex items-center gap-2">
-              <FileText size={18} className="text-[#155EEF]" />
-              <h2 className="text-lg font-bold text-[#172033]">Core Statistical Formulas</h2>
+              <FileText size={18} className="text-[#6B5A78]" />
+              <h2 className="text-lg font-bold text-[#30313A]">Core Statistical Formulas</h2>
             </div>
             <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
               <Formula
@@ -258,16 +258,16 @@ export default function Methodology() {
           </div>
 
           {/* Fare standardization visually enhanced */}
-          <Card className="border-[#E4E7EC] shadow-sm">
+          <Card className="border-[#DCD7CE] shadow-sm">
             <div className="mb-6 flex items-center gap-2">
-              <Settings2 size={18} className="text-[#155EEF]" />
+              <Settings2 size={18} className="text-[#6B5A78]" />
               <div>
-                <h2 className="text-base font-bold text-[#172033]">Fare Standardization Pipeline</h2>
-                <p className="text-xs text-[#667085] mt-1">Transforming raw inputs into comparable elementary prices</p>
+                <h2 className="text-base font-bold text-[#30313A]">Fare Standardization Pipeline</h2>
+                <p className="text-xs text-[#74727A] mt-1">Transforming raw inputs into comparable elementary prices</p>
               </div>
             </div>
 
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-3 bg-[#F9FAFB] p-6 rounded-xl border border-[#EAECF0]">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-3 bg-[#F6F2EC] p-6 rounded-xl border border-[#E1DBD2]">
               {[
                 'Observed source fare',
                 'Adult',
@@ -277,23 +277,23 @@ export default function Methodology() {
                 'Mandatory charges',
               ].map((x, i) => (
                 <React.Fragment key={x}>
-                  <div className="w-full lg:w-auto flex-1 rounded-lg border border-[#E4E7EC] bg-white p-3 text-center text-xs font-semibold text-[#344054] shadow-sm">
+                  <div className="w-full lg:w-auto flex-1 rounded-lg border border-[#DCD7CE] bg-white p-3 text-center text-xs font-semibold text-[#4B4851] shadow-sm">
                     {x}
                   </div>
-                  <div className="hidden lg:flex shrink-0 items-center justify-center text-[#D0D5DD]">
+                  <div className="hidden lg:flex shrink-0 items-center justify-center text-[#CDC5BB]">
                     <ArrowRight size={16} />
                   </div>
-                  <div className="flex lg:hidden shrink-0 items-center justify-center text-[#D0D5DD] py-1">
+                  <div className="flex lg:hidden shrink-0 items-center justify-center text-[#CDC5BB] py-1">
                     <ArrowDown size={16} />
                   </div>
                 </React.Fragment>
               ))}
-              <div className="w-full lg:w-auto flex-1 rounded-lg border border-[#155EEF] bg-[#EEF4FF] p-3 text-center text-xs font-bold text-[#155EEF] shadow-sm ring-2 ring-[#EEF4FF]">
+              <div className="w-full lg:w-auto flex-1 rounded-lg border border-[#6B5A78] bg-[#EEE8F2] p-3 text-center text-xs font-bold text-[#6B5A78] shadow-sm ring-2 ring-[#EEE8F2]">
                 Standardized fare
               </div>
             </div>
 
-            <div className="mt-5 flex gap-3 rounded-lg bg-[#FFFAEB] p-4 text-[#B54708] border border-[#FEDF89]">
+            <div className="mt-5 flex gap-3 rounded-lg bg-[#F7F2E7] p-4 text-[#95672D] border border-[#E1CFAB]">
               <AlertTriangle size={16} className="shrink-0 mt-0.5" />
               <p className="text-xs leading-5">
                 <strong>Excluded from standardization:</strong> Optional baggage, seat selection, meals, insurance, flexible upgrades and member/coupon discounts are strictly excluded and not silently added to the standardized price.
@@ -302,53 +302,53 @@ export default function Methodology() {
           </Card>
 
           {/* National APIx explanation */}
-          <Card className="border-[#E4E7EC] shadow-sm">
+          <Card className="border-[#DCD7CE] shadow-sm">
             <div className="mb-6 flex items-center gap-2">
-              <Weight size={18} className="text-[#155EEF]" />
+              <Weight size={18} className="text-[#6B5A78]" />
               <div>
-                <h2 className="text-base font-bold text-[#172033]">National Aggregation</h2>
-                <p className="text-xs text-[#667085] mt-1">Passenger-volume-weighted route basket approach</p>
+                <h2 className="text-base font-bold text-[#30313A]">National Aggregation</h2>
+                <p className="text-xs text-[#74727A] mt-1">Passenger-volume-weighted route basket approach</p>
               </div>
             </div>
 
             <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-              <div className="rounded-xl border border-[#E4E7EC] bg-white p-5 shadow-sm">
+              <div className="rounded-xl border border-[#DCD7CE] bg-white p-5 shadow-sm">
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="h-2 w-2 rounded-full bg-[#155EEF]"></div>
-                  <div className="text-sm font-bold text-[#172033]">Reference basket</div>
+                  <div className="h-2 w-2 rounded-full bg-[#6B5A78]"></div>
+                  <div className="text-sm font-bold text-[#30313A]">Reference basket</div>
                 </div>
-                <p className="text-xs leading-5 text-[#475467]">
+                <p className="text-xs leading-5 text-[#5F5A63]">
                   The prototype uses the verified DGCA passenger-volume reference dataset to construct the route basket and assign accurate baseline route weights.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-[#E4E7EC] bg-white p-5 shadow-sm">
+              <div className="rounded-xl border border-[#DCD7CE] bg-white p-5 shadow-sm">
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="h-2 w-2 rounded-full bg-[#12B76A]"></div>
-                  <div className="text-sm font-bold text-[#172033]">Covered routes</div>
+                  <div className="h-2 w-2 rounded-full bg-[#5D8D70]"></div>
+                  <div className="text-sm font-bold text-[#30313A]">Covered routes</div>
                 </div>
-                <p className="text-xs leading-5 text-[#475467]">
+                <p className="text-xs leading-5 text-[#5F5A63]">
                   Only routes with sufficient valid, standardizable airfare observations are permitted to contribute to the published national calculation.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-[#E4E7EC] bg-white p-5 shadow-sm">
+              <div className="rounded-xl border border-[#DCD7CE] bg-white p-5 shadow-sm">
                 <div className="flex items-center gap-2 mb-3">
                   <div className="h-2 w-2 rounded-full bg-[#F79009]"></div>
-                  <div className="text-sm font-bold text-[#172033]">Missing routes</div>
+                  <div className="text-sm font-bold text-[#30313A]">Missing routes</div>
                 </div>
-                <p className="text-xs leading-5 text-[#475467]">
+                <p className="text-xs leading-5 text-[#5F5A63]">
                   Missing routes are never assigned artificial or imputed prices. Instead, the weights of the successfully covered routes are renormalized.
                 </p>
               </div>
             </div>
 
-            <div className="mt-5 rounded-xl border border-[#BFDBFE] bg-[#EFF6FF] p-5 shadow-inner">
-              <div className="flex items-center gap-2 text-sm font-bold text-[#1D4ED8] mb-2">
+            <div className="mt-5 rounded-xl border border-[#C7B8CE] bg-[#F1EDF4] p-5 shadow-inner">
+              <div className="flex items-center gap-2 text-sm font-bold text-[#5C4C67] mb-2">
                 <Activity size={16} />
                 Current prototype state
               </div>
-              <p className="text-sm leading-6 text-[#1E3A8A]">
+              <p className="text-sm leading-6 text-[#4A3D52]">
                 The current National APIx is calculated from the configured <strong>40-directional-route basket</strong>. The latest verified build uses <strong>38 covered routes</strong>, representing <strong>95.0% route coverage</strong>, weighted strictly against DGCA 2024–25 passenger-volume data.
               </p>
             </div>
@@ -357,22 +357,22 @@ export default function Methodology() {
           {/* 3-Column Policy Grid */}
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
             {/* Data source policy */}
-            <Card className="flex flex-col border-[#E4E7EC] shadow-sm">
+            <Card className="flex flex-col border-[#DCD7CE] shadow-sm">
               <div className="flex items-center gap-2 mb-4">
-                <ShieldCheck size={18} className="text-[#0E9F9A]" />
-                <h3 className="text-sm font-bold text-[#172033]">Data Source Policy</h3>
+                <ShieldCheck size={18} className="text-[#718A78]" />
+                <h3 className="text-sm font-bold text-[#30313A]">Data Source Policy</h3>
               </div>
               <div className="space-y-4 flex-1">
                 <div>
-                  <h4 className="text-xs font-bold text-[#344054]">Live measurement layer</h4>
-                  <p className="mt-1 text-xs leading-5 text-[#667085]">
+                  <h4 className="text-xs font-bold text-[#4B4851]">Live measurement layer</h4>
+                  <p className="mt-1 text-xs leading-5 text-[#74727A]">
                     Airfare observations are collected during scheduled runs and stored with precise timestamps, route, travel date, lead time, source and quality metadata.
                   </p>
                 </div>
-                <div className="h-px w-full bg-[#EAECF0]"></div>
+                <div className="h-px w-full bg-[#E1DBD2]"></div>
                 <div>
-                  <h4 className="text-xs font-bold text-[#344054]">Reference layer</h4>
-                  <p className="mt-1 text-xs leading-5 text-[#667085]">
+                  <h4 className="text-xs font-bold text-[#4B4851]">Reference layer</h4>
+                  <p className="mt-1 text-xs leading-5 text-[#74727A]">
                     DGCA traffic data strictly supplies route-selection and passenger-volume weights. It is never used as a substitute for live airfare measurements.
                   </p>
                 </div>
@@ -380,15 +380,15 @@ export default function Methodology() {
             </Card>
 
             {/* CPI relationship */}
-            <Card className="flex flex-col border-[#E4E7EC] shadow-sm">
+            <Card className="flex flex-col border-[#DCD7CE] shadow-sm">
               <div className="flex items-center gap-2 mb-4">
-                <Database size={18} className="text-[#155EEF]" />
-                <h3 className="text-sm font-bold text-[#172033]">Relationship to CPI</h3>
+                <Database size={18} className="text-[#6B5A78]" />
+                <h3 className="text-sm font-bold text-[#30313A]">Relationship to CPI</h3>
               </div>
               <div className="flex-1">
-                <div className="rounded-lg bg-[#F9FAFB] p-4 border border-[#EAECF0] h-full">
-                  <h4 className="text-xs font-bold text-[#344054] mb-2">High-frequency augmentation indicator</h4>
-                  <p className="text-xs leading-5 text-[#667085]">
+                <div className="rounded-lg bg-[#F6F2EC] p-4 border border-[#E1DBD2] h-full">
+                  <h4 className="text-xs font-bold text-[#4B4851] mb-2">High-frequency augmentation indicator</h4>
+                  <p className="text-xs leading-5 text-[#74727A]">
                     APIx is explicitly designed as a high-frequency airfare price indicator meant to augment airfare price measurement for real-time economic monitoring. It should not be interpreted as a replacement for the official CPI produced by NSO/MoSPI.
                   </p>
                 </div>
@@ -396,59 +396,59 @@ export default function Methodology() {
             </Card>
 
             {/* Periodic indices */}
-            <Card className="flex flex-col border-[#E4E7EC] shadow-sm">
+            <Card className="flex flex-col border-[#DCD7CE] shadow-sm">
               <div className="flex items-center gap-2 mb-4">
-                <BarChart3 size={18} className="text-[#7A5AF8]" />
-                <h3 className="text-sm font-bold text-[#172033]">Periodic Indices</h3>
+                <BarChart3 size={18} className="text-[#7B6A88]" />
+                <h3 className="text-sm font-bold text-[#30313A]">Periodic Indices</h3>
               </div>
               <div className="flex-1 space-y-3 text-xs">
-                <p className="leading-5 text-[#667085] mb-3">
+                <p className="leading-5 text-[#74727A] mb-3">
                   Historical gaps are preserved; the frontend does not fill missing periods with fabricated values.
                 </p>
-                <div className="flex items-center justify-between border-b border-[#EAECF0] pb-2">
-                  <span className="font-semibold text-[#344054]">Daily</span>
-                  <span className="text-[#667085]">Short-term movement</span>
+                <div className="flex items-center justify-between border-b border-[#E1DBD2] pb-2">
+                  <span className="font-semibold text-[#4B4851]">Daily</span>
+                  <span className="text-[#74727A]">Short-term movement</span>
                 </div>
-                <div className="flex items-center justify-between border-b border-[#EAECF0] pb-2">
-                  <span className="font-semibold text-[#344054]">Weekly</span>
-                  <span className="text-[#667085]">Smoothed movement</span>
+                <div className="flex items-center justify-between border-b border-[#E1DBD2] pb-2">
+                  <span className="font-semibold text-[#4B4851]">Weekly</span>
+                  <span className="text-[#74727A]">Smoothed movement</span>
                 </div>
                 <div className="flex items-center justify-between pb-1">
-                  <span className="font-semibold text-[#344054]">Monthly</span>
-                  <span className="text-[#667085]">Long-period aggregation</span>
+                  <span className="font-semibold text-[#4B4851]">Monthly</span>
+                  <span className="text-[#74727A]">Long-period aggregation</span>
                 </div>
               </div>
             </Card>
           </div>
 
           {/* Auditability */}
-          <Card className="border-[#E4E7EC] bg-gradient-to-br from-white to-[#F9FAFB] shadow-sm">
+          <Card className="border-[#DCD7CE] bg-gradient-to-br from-white to-[#F6F2EC] shadow-sm">
             <div className="mb-5 flex items-center gap-2">
-              <CheckCircle size={18} className="text-[#12B76A]" />
+              <CheckCircle size={18} className="text-[#5D8D70]" />
               <div>
-                <h2 className="text-base font-bold text-[#172033]">Reproducibility & Auditability</h2>
-                <p className="text-xs text-[#667085] mt-1">Every published value has traceable inputs</p>
+                <h2 className="text-base font-bold text-[#30313A]">Reproducibility & Auditability</h2>
+                <p className="text-xs text-[#74727A] mt-1">Every published value has traceable inputs</p>
               </div>
             </div>
 
             <div className="grid gap-4 md:grid-cols-3 text-sm">
-              <div className="rounded-xl border border-[#EAECF0] bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
-                <div className="font-bold text-[#172033]">Timestamped observations</div>
-                <p className="mt-2 text-xs leading-5 text-[#667085]">
+              <div className="rounded-xl border border-[#E1DBD2] bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
+                <div className="font-bold text-[#30313A]">Timestamped observations</div>
+                <p className="mt-2 text-xs leading-5 text-[#74727A]">
                   Immutable collection timestamps precisely identify when live airfare observations entered the system pipeline.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-[#EAECF0] bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
-                <div className="font-bold text-[#172033]">Versioned methodology</div>
-                <p className="mt-2 text-xs leading-5 text-[#667085]">
+              <div className="rounded-xl border border-[#E1DBD2] bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
+                <div className="font-bold text-[#30313A]">Versioned methodology</div>
+                <p className="mt-2 text-xs leading-5 text-[#74727A]">
                   The backend clearly exposes the methodology version used by the index calculation for absolute version control.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-[#EAECF0] bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
-                <div className="font-bold text-[#172033]">Quality traceability</div>
-                <p className="mt-2 text-xs leading-5 text-[#667085]">
+              <div className="rounded-xl border border-[#E1DBD2] bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
+                <div className="font-bold text-[#30313A]">Quality traceability</div>
+                <p className="mt-2 text-xs leading-5 text-[#74727A]">
                   Flagged observations remain securely stored for deep audits rather than being silently deleted from the dataset.
                 </p>
               </div>

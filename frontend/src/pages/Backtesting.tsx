@@ -17,7 +17,7 @@ function statusTone(status: string) {
   const value = status.toLowerCase();
 
   if (value === 'success' || value === 'passed') {
-    return 'bg-[#ECFDF3] text-[#027A48] border-[#ABEFC6]';
+    return 'bg-[#EEF5F0] text-[#4E8066] border-[#C5DDCC]';
   }
 
   if (
@@ -25,10 +25,10 @@ function statusTone(status: string) {
     value === 'pending' ||
     value === 'running'
   ) {
-    return 'bg-[#FFFAEB] text-[#B54708] border-[#FEDF89]';
+    return 'bg-[#F7F2E7] text-[#95672D] border-[#E1CFAB]';
   }
 
-  return 'bg-[#FEF3F2] text-[#B42318] border-[#FECDCA]';
+  return 'bg-[#F7ECEA] text-[#A85C57] border-[#E7C1BC]';
 }
 
 function formatStatus(status: string) {
@@ -102,7 +102,7 @@ export default function Backtesting() {
           {error}
         </div>
       ) : loading ? (
-        <div className="py-16 text-center text-sm text-[#667085]">
+        <div className="py-16 text-center text-sm text-[#74727A]">
           Loading backtest history…
         </div>
       ) : (
@@ -113,8 +113,8 @@ export default function Backtesting() {
               <div
                 className={`mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${
                   insufficientHistory
-                    ? 'bg-[#FFFAEB] text-[#B54708]'
-                    : 'bg-[#ECFDF3] text-[#027A48]'
+                    ? 'bg-[#F7F2E7] text-[#95672D]'
+                    : 'bg-[#EEF5F0] text-[#4E8066]'
                 }`}
               >
                 {insufficientHistory ? (
@@ -129,13 +129,13 @@ export default function Backtesting() {
                   CURRENT VALIDATION STATE
                 </div>
 
-                <h2 className="mt-1 text-base font-semibold text-[#172033]">
+                <h2 className="mt-1 text-base font-semibold text-[#30313A]">
                   {latest
                     ? formatStatus(latest.status)
                     : 'No backtest run available'}
                 </h2>
 
-                <p className="mt-2 max-w-3xl text-xs leading-6 text-[#667085]">
+                <p className="mt-2 max-w-3xl text-xs leading-6 text-[#74727A]">
                   {insufficientHistory
                     ? 'The backtest is waiting for enough real daily National APIx history. The backend does not manufacture historical observations to satisfy the 30-day requirement.'
                     : latest
@@ -167,11 +167,11 @@ export default function Backtesting() {
                 <Card>
                   <div className="section-label">OBSERVATIONS COMPARED</div>
 
-                  <div className="mt-3 text-3xl font-semibold tracking-tight text-[#172033]">
+                  <div className="mt-3 text-3xl font-semibold tracking-tight text-[#30313A]">
                     {latest.observations_compared.toLocaleString('en-IN')}
                   </div>
 
-                  <div className="mt-1 text-xs text-[#667085]">
+                  <div className="mt-1 text-xs text-[#74727A]">
                     Historical observations used
                   </div>
                 </Card>
@@ -179,11 +179,11 @@ export default function Backtesting() {
                 <Card>
                   <div className="section-label">ROUTES COMPARED</div>
 
-                  <div className="mt-3 text-3xl font-semibold tracking-tight text-[#172033]">
+                  <div className="mt-3 text-3xl font-semibold tracking-tight text-[#30313A]">
                     {latest.routes_compared.toLocaleString('en-IN')}
                   </div>
 
-                  <div className="mt-1 text-xs text-[#667085]">
+                  <div className="mt-1 text-xs text-[#74727A]">
                     Routes included in validation
                   </div>
                 </Card>
@@ -191,11 +191,11 @@ export default function Backtesting() {
                 <Card>
                   <div className="section-label">METHODOLOGY</div>
 
-                  <div className="mt-3 text-xl font-semibold tracking-tight text-[#172033]">
+                  <div className="mt-3 text-xl font-semibold tracking-tight text-[#30313A]">
                     v{latest.methodology_version}
                   </div>
 
-                  <div className="mt-1 text-xs text-[#667085]">
+                  <div className="mt-1 text-xs text-[#74727A]">
                     Calculation version
                   </div>
                 </Card>
@@ -203,19 +203,19 @@ export default function Backtesting() {
 
               {/* Insufficient history explanation */}
               {insufficientHistory && (
-                <Card className="mt-4 border-[#FEDF89] bg-[#FFFCF5]">
+                <Card className="mt-4 border-[#E1CFAB] bg-[#FBF8F3]">
                   <div className="flex items-start gap-3">
                     <AlertCircle
                       size={18}
-                      className="mt-0.5 shrink-0 text-[#B54708]"
+                      className="mt-0.5 shrink-0 text-[#95672D]"
                     />
 
                     <div>
-                      <div className="text-sm font-semibold text-[#7A2E0E]">
+                      <div className="text-sm font-semibold text-[#8E5A33]">
                         30-day backtest not yet reportable
                       </div>
 
-                      <p className="mt-2 text-xs leading-6 text-[#667085]">
+                      <p className="mt-2 text-xs leading-6 text-[#74727A]">
                         The current system has only a small amount of
                         accumulated daily National APIx history. A
                         30-day backtest requires enough real historical
@@ -223,34 +223,34 @@ export default function Backtesting() {
                       </p>
 
                       <div className="mt-4 grid gap-3 sm:grid-cols-3">
-                        <div className="rounded-xl border border-[#FEE4B7] bg-white p-4">
-                          <div className="text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                        <div className="rounded-xl border border-[#EDE1C7] bg-white p-4">
+                          <div className="text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                             Required
                           </div>
 
-                          <div className="mt-2 text-lg font-semibold text-[#172033]">
+                          <div className="mt-2 text-lg font-semibold text-[#30313A]">
                             30 days
                           </div>
                         </div>
 
-                        <div className="rounded-xl border border-[#FEE4B7] bg-white p-4">
-                          <div className="text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                        <div className="rounded-xl border border-[#EDE1C7] bg-white p-4">
+                          <div className="text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                             Currently available
                           </div>
 
-                          <div className="mt-2 text-lg font-semibold text-[#172033]">
+                          <div className="mt-2 text-lg font-semibold text-[#30313A]">
                             {latest.metrics?.available_daily_periods ??
                               '—'}{' '}
                             days
                           </div>
                         </div>
 
-                        <div className="rounded-xl border border-[#FEE4B7] bg-white p-4">
-                          <div className="text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                        <div className="rounded-xl border border-[#EDE1C7] bg-white p-4">
+                          <div className="text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                             Action
                           </div>
 
-                          <div className="mt-2 text-sm font-semibold text-[#172033]">
+                          <div className="mt-2 text-sm font-semibold text-[#30313A]">
                             Continue collection
                           </div>
                         </div>
@@ -265,7 +265,7 @@ export default function Backtesting() {
                 <div className="flex items-center gap-2">
                   <BarChart3
                     size={16}
-                    className="text-[#155EEF]"
+                    className="text-[#6B5A78]"
                   />
 
                   <div>
@@ -285,13 +285,13 @@ export default function Backtesting() {
                       ([key, value]) => (
                         <div
                           key={key}
-                          className="rounded-xl border border-[#E4E7EC] bg-[#F9FAFB] p-4"
+                          className="rounded-xl border border-[#DCD7CE] bg-[#F6F2EC] p-4"
                         >
-                          <div className="text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                          <div className="text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                             {key.replace(/_/g, ' ')}
                           </div>
 
-                          <div className="mt-2 text-xl font-semibold text-[#172033]">
+                          <div className="mt-2 text-xl font-semibold text-[#30313A]">
                             {metricValue(value)}
                           </div>
                         </div>
@@ -299,12 +299,12 @@ export default function Backtesting() {
                     )}
                   </div>
                 ) : (
-                  <div className="mt-5 rounded-xl border border-dashed border-[#D0D5DD] p-8 text-center">
-                    <div className="text-sm font-medium text-[#172033]">
+                  <div className="mt-5 rounded-xl border border-dashed border-[#CDC5BB] p-8 text-center">
+                    <div className="text-sm font-medium text-[#30313A]">
                       No comparison metrics available
                     </div>
 
-                    <p className="mt-2 text-xs text-[#667085]">
+                    <p className="mt-2 text-xs text-[#74727A]">
                       Metrics will appear once a reportable backtest
                       has sufficient real historical data.
                     </p>
@@ -317,7 +317,7 @@ export default function Backtesting() {
                 <div className="flex items-center gap-2">
                   <Database
                     size={16}
-                    className="text-[#155EEF]"
+                    className="text-[#6B5A78]"
                   />
 
                   <div>
@@ -332,32 +332,32 @@ export default function Backtesting() {
                 </div>
 
                 <div className="mt-5 grid grid-cols-1 gap-3 md:grid-cols-3">
-                  <div className="rounded-xl bg-[#F9FAFB] p-4">
-                    <div className="text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                  <div className="rounded-xl bg-[#F6F2EC] p-4">
+                    <div className="text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                       Reference source
                     </div>
 
-                    <div className="mt-2 text-sm font-semibold text-[#172033]">
+                    <div className="mt-2 text-sm font-semibold text-[#30313A]">
                       {latest.reference_source || '—'}
                     </div>
                   </div>
 
-                  <div className="rounded-xl bg-[#F9FAFB] p-4">
-                    <div className="text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                  <div className="rounded-xl bg-[#F6F2EC] p-4">
+                    <div className="text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                       Started
                     </div>
 
-                    <div className="mt-2 text-sm font-semibold text-[#172033]">
+                    <div className="mt-2 text-sm font-semibold text-[#30313A]">
                       {formatDate(latest.started_at)}
                     </div>
                   </div>
 
-                  <div className="rounded-xl bg-[#F9FAFB] p-4">
-                    <div className="text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                  <div className="rounded-xl bg-[#F6F2EC] p-4">
+                    <div className="text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                       Finished
                     </div>
 
-                    <div className="mt-2 text-sm font-semibold text-[#172033]">
+                    <div className="mt-2 text-sm font-semibold text-[#30313A]">
                       {formatDate(latest.finished_at)}
                     </div>
                   </div>
@@ -373,24 +373,24 @@ export default function Backtesting() {
                 <div className="mt-4 overflow-x-auto">
                   <table className="w-full min-w-[720px] text-left">
                     <thead>
-                      <tr className="border-b border-[#EAECF0]">
-                        <th className="px-3 py-3 text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                      <tr className="border-b border-[#E1DBD2]">
+                        <th className="px-3 py-3 text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                           Run
                         </th>
 
-                        <th className="px-3 py-3 text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                        <th className="px-3 py-3 text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                           Status
                         </th>
 
-                        <th className="px-3 py-3 text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                        <th className="px-3 py-3 text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                           Observations
                         </th>
 
-                        <th className="px-3 py-3 text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                        <th className="px-3 py-3 text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                           Routes
                         </th>
 
-                        <th className="px-3 py-3 text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                        <th className="px-3 py-3 text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                           Started
                         </th>
                       </tr>
@@ -400,9 +400,9 @@ export default function Backtesting() {
                       {runs.map((run) => (
                         <tr
                           key={run.backtest_run_id}
-                          className="border-b border-[#F2F4F7] last:border-0"
+                          className="border-b border-[#ECE8E1] last:border-0"
                         >
-                          <td className="px-3 py-3 font-mono text-[10px] text-[#667085]">
+                          <td className="px-3 py-3 font-mono text-[10px] text-[#74727A]">
                             {run.backtest_run_id.slice(0, 12)}…
                           </td>
 
@@ -416,17 +416,17 @@ export default function Backtesting() {
                             </span>
                           </td>
 
-                          <td className="px-3 py-3 text-xs text-[#172033]">
+                          <td className="px-3 py-3 text-xs text-[#30313A]">
                             {run.observations_compared.toLocaleString(
                               'en-IN',
                             )}
                           </td>
 
-                          <td className="px-3 py-3 text-xs text-[#172033]">
+                          <td className="px-3 py-3 text-xs text-[#30313A]">
                             {run.routes_compared}
                           </td>
 
-                          <td className="px-3 py-3 text-xs text-[#667085]">
+                          <td className="px-3 py-3 text-xs text-[#74727A]">
                             {formatDate(run.started_at)}
                           </td>
                         </tr>
@@ -441,15 +441,15 @@ export default function Backtesting() {
               <div className="flex items-start gap-3">
                 <Info
                   size={18}
-                  className="mt-0.5 text-[#155EEF]"
+                  className="mt-0.5 text-[#6B5A78]"
                 />
 
                 <div>
-                  <h2 className="text-sm font-semibold text-[#172033]">
+                  <h2 className="text-sm font-semibold text-[#30313A]">
                     No backtest results are stored yet
                   </h2>
 
-                  <p className="mt-2 text-xs leading-6 text-[#667085]">
+                  <p className="mt-2 text-xs leading-6 text-[#74727A]">
                     The system will report a backtest only when the
                     required real historical data and reference inputs
                     are available. No synthetic airfare observations

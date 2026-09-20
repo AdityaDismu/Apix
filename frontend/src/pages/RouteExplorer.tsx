@@ -328,20 +328,20 @@ export default function RouteExplorer() {
               <ChevronDown className="field-chevron" />
             </div>
 
-            <div className="mt-2 text-[11px] text-[#667085]">
+            <div className="mt-2 text-[11px] text-[#74727A]">
               {coveredRouteCount} directional routes configured in the
               backend basket
             </div>
           </div>
 
-          <div className="hidden lg:block pb-2 text-[#155EEF]">
+          <div className="hidden lg:block pb-2 text-[#6B5A78]">
             →
           </div>
 
-          <div className="ml-auto text-right text-xs text-[#667085]">
+          <div className="ml-auto text-right text-xs text-[#74727A]">
             <div>Route source</div>
 
-            <b className="text-[#172033]">
+            <b className="text-[#30313A]">
               {routeMeta?.source || 'DGCA route basket'}
             </b>
 
@@ -368,7 +368,7 @@ export default function RouteExplorer() {
       )}
 
       {loading ? (
-        <div className="py-16 text-center text-sm text-[#667085]">
+        <div className="py-16 text-center text-sm text-[#74727A]">
           Loading route data…
         </div>
       ) : (
@@ -381,13 +381,13 @@ export default function RouteExplorer() {
                 {latest?.index.toFixed(2) ?? '—'}
               </div>
 
-              <div className="mt-1 text-xs text-[#667085]">
+              <div className="mt-1 text-xs text-[#74727A]">
                 Latest route snapshot
               </div>
 
               <div className="mt-5 space-y-2 text-xs">
                 <div className="flex justify-between">
-                  <span className="text-[#667085]">Change</span>
+                  <span className="text-[#74727A]">Change</span>
 
                   <b>
                     {change == null
@@ -397,7 +397,7 @@ export default function RouteExplorer() {
                 </div>
 
                 <div className="flex justify-between">
-                  <span className="text-[#667085]">
+                  <span className="text-[#74727A]">
                     Lead-time windows
                   </span>
 
@@ -405,7 +405,7 @@ export default function RouteExplorer() {
                 </div>
 
                 <div className="flex justify-between">
-                  <span className="text-[#667085]">
+                  <span className="text-[#74727A]">
                     Observations used
                   </span>
 
@@ -413,7 +413,7 @@ export default function RouteExplorer() {
                 </div>
 
                 <div className="flex justify-between">
-                  <span className="text-[#667085]">Coverage</span>
+                  <span className="text-[#74727A]">Coverage</span>
 
                   <b>
                     {latest
@@ -450,7 +450,7 @@ export default function RouteExplorer() {
                     {Number(elasticity.elasticity).toFixed(3)}
                   </div>
 
-                  <p className="mt-1 text-xs text-[#667085]">
+                  <p className="mt-1 text-xs text-[#74727A]">
                     Log-log elasticity coefficient (observational,
                     not causal).
                   </p>
@@ -461,13 +461,13 @@ export default function RouteExplorer() {
                         key={p.advance_days}
                         className="flex justify-between text-xs"
                       >
-                        <span className="font-mono text-[#155EEF]">
+                        <span className="font-mono text-[#6B5A78]">
                           T+{p.advance_days}
                         </span>
 
                         <span>{money(p.median_fare)}</span>
 
-                        <span className="text-[#667085]">
+                        <span className="text-[#74727A]">
                           {p.observations} obs
                         </span>
                       </div>
@@ -475,7 +475,7 @@ export default function RouteExplorer() {
                   </div>
                 </>
               ) : (
-                <div className="mt-6 text-sm text-[#667085]">
+                <div className="mt-6 text-sm text-[#74727A]">
                   Insufficient valid lead-time points to estimate
                   elasticity.
                 </div>
@@ -484,7 +484,7 @@ export default function RouteExplorer() {
           </div>
 
           <Card padding="none">
-            <div className="px-5 py-4 border-b border-[#F2F4F7]">
+            <div className="px-5 py-4 border-b border-[#ECE8E1]">
               <div className="flex flex-col lg:flex-row lg:items-center gap-3">
                 <div>
                   <div className="section-label">
@@ -575,7 +575,7 @@ export default function RouteExplorer() {
                         {o.airline}
                       </td>
 
-                      <td className="font-mono text-[#667085]">
+                      <td className="font-mono text-[#74727A]">
                         {o.flight_number || '—'}
                       </td>
 
@@ -593,7 +593,7 @@ export default function RouteExplorer() {
 
                       <td>{date(o.travel_date)}</td>
 
-                      <td className="font-mono text-[#155EEF]">
+                      <td className="font-mono text-[#6B5A78]">
                         T+{o.advance_days}
                       </td>
 
@@ -616,7 +616,7 @@ export default function RouteExplorer() {
               </table>
             </div>
 
-            <div className="px-5 py-3 border-t border-[#F2F4F7] flex items-center justify-between text-xs text-[#667085]">
+            <div className="px-5 py-3 border-t border-[#ECE8E1] flex items-center justify-between text-xs text-[#74727A]">
               <span>
                 Backend page: {offset / 100 + 1} ·{' '}
                 {filtered.length} returned observations
@@ -648,14 +648,14 @@ export default function RouteExplorer() {
 
       {selected && (
         <div
-          className="fixed inset-0 z-40 bg-[#172033]/20 flex items-center justify-center p-4"
+          className="fixed inset-0 z-40 bg-[#30313A]/20 flex items-center justify-center p-4"
           onClick={() => setSelected(null)}
         >
           <div
-            className="bg-white rounded-2xl border border-[#E4E7EC] shadow-xl max-w-2xl w-full max-h-[85vh] overflow-auto"
+            className="bg-white rounded-2xl border border-[#DCD7CE] shadow-xl max-w-2xl w-full max-h-[85vh] overflow-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="px-6 py-5 border-b border-[#E4E7EC] flex items-start justify-between">
+            <div className="px-6 py-5 border-b border-[#DCD7CE] flex items-start justify-between">
               <div>
                 <div className="section-label">
                   OBSERVATION DETAIL
@@ -740,7 +740,7 @@ export default function RouteExplorer() {
                   </div>
                 </div>
               ) : (
-                <div className="mt-3 rounded-xl bg-[#FFF7ED] border border-[#FED7AA] p-4 text-xs text-[#9A3412]">
+                <div className="mt-3 rounded-xl bg-[#F7F2E7] border border-[#E1CFAB] p-4 text-xs text-[#8E5A33]">
                   <AlertTriangle
                     size={14}
                     className="inline mr-2"
@@ -752,7 +752,7 @@ export default function RouteExplorer() {
                 </div>
               )}
 
-              <div className="mt-4 text-[11px] text-[#667085]">
+              <div className="mt-4 text-[11px] text-[#74727A]">
                 <ShieldCheck
                   size={13}
                   className="inline mr-1"

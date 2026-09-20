@@ -59,13 +59,13 @@ function formatDate(value: string | null | undefined) {
 function statusClass(status: string) {
   switch (status.toLowerCase()) {
     case 'valid':
-      return 'border-[#ABEFC6] bg-[#ECFDF3] text-[#027A48]';
+      return 'border-[#C5DDCC] bg-[#EEF5F0] text-[#4E8066]';
 
     case 'flagged':
-      return 'border-[#FEDF89] bg-[#FFFAEB] text-[#B54708]';
+      return 'border-[#E1CFAB] bg-[#F7F2E7] text-[#95672D]';
 
     default:
-      return 'border-[#D0D5DD] bg-[#F9FAFB] text-[#475467]';
+      return 'border-[#CDC5BB] bg-[#F6F2EC] text-[#5F5A63]';
   }
 }
 
@@ -145,17 +145,17 @@ export default function DataQuality() {
           {error}
         </div>
       ) : loading ? (
-        <div className="py-16 text-center text-sm text-[#667085]">
+        <div className="py-16 text-center text-sm text-[#74727A]">
           Loading quality data…
         </div>
       ) : (
         <>
           {/* Quality status & Metrics (Combined for visual impact) */}
-          <Card className="mb-6 overflow-hidden border-[#E4E7EC] shadow-sm">
+          <Card className="mb-6 overflow-hidden border-[#DCD7CE] shadow-sm">
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8">
               <div className="lg:w-1/3">
                 <div className="flex items-center gap-2">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#ECFDF3] text-[#027A48]">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#EEF5F0] text-[#4E8066]">
                     <ShieldCheck size={16} />
                   </div>
 
@@ -164,17 +164,17 @@ export default function DataQuality() {
                   </div>
                 </div>
 
-                <h2 className="mt-5 text-4xl font-bold tracking-tight text-[#172033]">
+                <h2 className="mt-5 text-4xl font-bold tracking-tight text-[#30313A]">
                   {quality
                     ? `${(quality.valid_rate * 100).toFixed(1)}%`
                     : '—'}
                 </h2>
-                <div className="mt-1 text-xs font-bold uppercase tracking-wide text-[#027A48]">
+                <div className="mt-1 text-xs font-bold uppercase tracking-wide text-[#4E8066]">
                   Valid Observation Rate
                 </div>
 
-                <p className="mt-4 max-w-sm text-sm leading-6 text-[#475467]">
-                  <strong className="font-semibold text-[#172033]">
+                <p className="mt-4 max-w-sm text-sm leading-6 text-[#5F5A63]">
+                  <strong className="font-semibold text-[#30313A]">
                     {quality
                       ? `${(quality.valid_rate * 100).toFixed(1)}%`
                       : '—'}{' '}
@@ -191,44 +191,44 @@ export default function DataQuality() {
 
               <div className="lg:w-2/3">
                 <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-                  <div className="rounded-xl border border-[#E4E7EC] bg-[#F9FAFB] p-4 text-center">
-                    <div className="text-2xl font-bold text-[#172033]">
+                  <div className="rounded-xl border border-[#DCD7CE] bg-[#F6F2EC] p-4 text-center">
+                    <div className="text-2xl font-bold text-[#30313A]">
                       {formatNumber(totalCount)}
                     </div>
-                    <div className="mt-1 text-[10px] font-bold uppercase leading-tight tracking-wide text-[#667085]">
+                    <div className="mt-1 text-[10px] font-bold uppercase leading-tight tracking-wide text-[#74727A]">
                       Total collected
                       <br />
                       observations
                     </div>
                   </div>
 
-                  <div className="rounded-xl border border-[#ABEFC6] bg-[#ECFDF3] p-4 text-center shadow-sm">
-                    <div className="text-2xl font-bold text-[#027A48]">
+                  <div className="rounded-xl border border-[#C5DDCC] bg-[#EEF5F0] p-4 text-center shadow-sm">
+                    <div className="text-2xl font-bold text-[#4E8066]">
                       {formatNumber(validCount)}
                     </div>
-                    <div className="mt-1 text-[10px] font-bold uppercase leading-tight tracking-wide text-[#027A48]">
+                    <div className="mt-1 text-[10px] font-bold uppercase leading-tight tracking-wide text-[#4E8066]">
                       Index eligible
                       <br />
                       observations
                     </div>
                   </div>
 
-                  <div className="rounded-xl border border-[#FEDF89] bg-[#FFFAEB] p-4 text-center">
-                    <div className="text-2xl font-bold text-[#B54708]">
+                  <div className="rounded-xl border border-[#E1CFAB] bg-[#F7F2E7] p-4 text-center">
+                    <div className="text-2xl font-bold text-[#95672D]">
                       {formatNumber(flaggedCount)}
                     </div>
-                    <div className="mt-1 text-[10px] font-bold uppercase leading-tight tracking-wide text-[#B54708]">
+                    <div className="mt-1 text-[10px] font-bold uppercase leading-tight tracking-wide text-[#95672D]">
                       Flagged
                       <br />
                       for review
                     </div>
                   </div>
 
-                  <div className="rounded-xl border border-[#E4E7EC] bg-[#F9FAFB] p-4 text-center">
-                    <div className="text-2xl font-bold text-[#172033]">
+                  <div className="rounded-xl border border-[#DCD7CE] bg-[#F6F2EC] p-4 text-center">
+                    <div className="text-2xl font-bold text-[#30313A]">
                       {formatNumber(completeComponents)}
                     </div>
-                    <div className="mt-1 text-[10px] font-bold uppercase leading-tight tracking-wide text-[#667085]">
+                    <div className="mt-1 text-[10px] font-bold uppercase leading-tight tracking-wide text-[#74727A]">
                       Complete fare
                       <br />
                       components
@@ -236,15 +236,15 @@ export default function DataQuality() {
                   </div>
                 </div>
 
-                <div className="mt-4 rounded-xl border border-[#E4E7EC] bg-[#F9FAFB] p-4">
-                  <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wide text-[#344054]">
-                    <FileCheck2 size={14} className="text-[#0E9F9A]" />
+                <div className="mt-4 rounded-xl border border-[#DCD7CE] bg-[#F6F2EC] p-4">
+                  <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wide text-[#4B4851]">
+                    <FileCheck2 size={14} className="text-[#718A78]" />
                     Fare component detail —{' '}
                     {fareComponentRate === null
                       ? '—'
                       : `${fareComponentRate.toFixed(1)}%`}
                   </div>
-                  <p className="mt-2 text-xs leading-5 text-[#667085]">
+                  <p className="mt-2 text-xs leading-5 text-[#74727A]">
                     The current Google Flights source provides total
                     consumer fare, but does not expose a complete breakdown
                     of base fare, taxes and fees. APIx therefore uses the
@@ -257,9 +257,9 @@ export default function DataQuality() {
           </Card>
 
           {/* National eligibility */}
-          <Card className="mt-4 border-[#E4E7EC] shadow-sm">
+          <Card className="mt-4 border-[#DCD7CE] shadow-sm">
             <div className="flex items-start gap-3">
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#EEF4FF] text-[#155EEF]">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#EEE8F2] text-[#6B5A78]">
                 <CheckCircle2 size={17} />
               </div>
 
@@ -268,11 +268,11 @@ export default function DataQuality() {
                   NATIONAL APIx ELIGIBILITY
                 </div>
 
-                <h2 className="mt-1 text-base font-semibold text-[#172033]">
+                <h2 className="mt-1 text-base font-semibold text-[#30313A]">
                   Quality control feeds the index engine
                 </h2>
 
-                <p className="mt-2 max-w-3xl text-xs leading-6 text-[#667085]">
+                <p className="mt-2 max-w-3xl text-xs leading-6 text-[#74727A]">
                   Database-wide quality counts describe the complete stored
                   dataset. The National APIx calculation uses only
                   observations that pass the implemented eligibility rules
@@ -282,35 +282,35 @@ export default function DataQuality() {
             </div>
 
             <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
-              <div className="rounded-xl border border-[#E4E7EC] bg-[#F9FAFB] p-5">
-                <div className="text-[10px] font-bold uppercase tracking-wide text-[#155EEF]">
+              <div className="rounded-xl border border-[#DCD7CE] bg-[#F6F2EC] p-5">
+                <div className="text-[10px] font-bold uppercase tracking-wide text-[#6B5A78]">
                   Quality Gate
                 </div>
-                <p className="mt-3 text-sm font-semibold leading-tight text-[#172033]">
+                <p className="mt-3 text-sm font-semibold leading-tight text-[#30313A]">
                   Only validated observations enter index calculation.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-[#E4E7EC] bg-[#F9FAFB] p-5">
-                <div className="text-[10px] font-bold uppercase tracking-wide text-[#B54708]">
+              <div className="rounded-xl border border-[#DCD7CE] bg-[#F6F2EC] p-5">
+                <div className="text-[10px] font-bold uppercase tracking-wide text-[#95672D]">
                   Outlier Policy
                 </div>
-                <div className="mt-3 text-sm font-semibold text-[#172033]">
+                <div className="mt-3 text-sm font-semibold text-[#30313A]">
                   Flag, don't delete.
                 </div>
-                <p className="mt-1 text-xs leading-5 text-[#667085]">
+                <p className="mt-1 text-xs leading-5 text-[#74727A]">
                   Questionable observations remain available for audit.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-[#E4E7EC] bg-[#F9FAFB] p-5">
-                <div className="text-[10px] font-bold uppercase tracking-wide text-[#0E9F9A]">
+              <div className="rounded-xl border border-[#DCD7CE] bg-[#F6F2EC] p-5">
+                <div className="text-[10px] font-bold uppercase tracking-wide text-[#718A78]">
                   Missing Data
                 </div>
-                <div className="mt-3 text-sm font-semibold text-[#172033]">
+                <div className="mt-3 text-sm font-semibold text-[#30313A]">
                   Don't invent.
                 </div>
-                <p className="mt-1 text-xs leading-5 text-[#667085]">
+                <p className="mt-1 text-xs leading-5 text-[#74727A]">
                   Insufficient route coverage remains uncovered.
                 </p>
               </div>
@@ -318,7 +318,7 @@ export default function DataQuality() {
           </Card>
 
           {/* Validation pipeline - Transformed to Horizontal Flow */}
-          <Card className="mt-4 border-[#E4E7EC] shadow-sm overflow-visible">
+          <Card className="mt-4 border-[#DCD7CE] shadow-sm overflow-visible">
             <div className="section-label text-center sm:text-left">
               VALIDATION PIPELINE
             </div>
@@ -350,24 +350,24 @@ export default function DataQuality() {
                 ],
               ].map(([number, title, text], idx) => (
                 <React.Fragment key={number}>
-                  <div className="relative flex-1 w-full lg:w-auto rounded-xl border border-[#E4E7EC] bg-white p-5 text-center shadow-sm hover:shadow-md transition-shadow">
-                    <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-[#EEF4FF] text-sm font-bold text-[#155EEF]">
+                  <div className="relative flex-1 w-full lg:w-auto rounded-xl border border-[#DCD7CE] bg-white p-5 text-center shadow-sm hover:shadow-md transition-shadow">
+                    <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-[#EEE8F2] text-sm font-bold text-[#6B5A78]">
                       {number}
                     </div>
-                    <div className="mt-4 text-sm font-bold uppercase tracking-wide text-[#172033]">
+                    <div className="mt-4 text-sm font-bold uppercase tracking-wide text-[#30313A]">
                       {title}
                     </div>
-                    <p className="mt-2 text-xs leading-5 text-[#667085]">
+                    <p className="mt-2 text-xs leading-5 text-[#74727A]">
                       {text}
                     </p>
                   </div>
                   {idx < 3 && (
-                    <div className="hidden lg:flex shrink-0 items-center justify-center px-1 text-[#D0D5DD] mt-10">
+                    <div className="hidden lg:flex shrink-0 items-center justify-center px-1 text-[#CDC5BB] mt-10">
                       <ArrowRight size={24} />
                     </div>
                   )}
                   {idx < 3 && (
-                    <div className="flex lg:hidden shrink-0 items-center justify-center py-2 text-[#D0D5DD]">
+                    <div className="flex lg:hidden shrink-0 items-center justify-center py-2 text-[#CDC5BB]">
                       <ArrowDown size={24} />
                     </div>
                   )}
@@ -376,17 +376,17 @@ export default function DataQuality() {
             </div>
 
             <div className="mt-6 flex flex-col items-center">
-              <div className="text-[#D0D5DD] mb-3">
+              <div className="text-[#CDC5BB] mb-3">
                 <ArrowDown size={24} />
               </div>
-              <div className="rounded-full border border-[#ABEFC6] bg-[#ECFDF3] px-8 py-3 text-sm font-bold text-[#027A48] shadow-sm">
+              <div className="rounded-full border border-[#C5DDCC] bg-[#EEF5F0] px-8 py-3 text-sm font-bold text-[#4E8066] shadow-sm">
                 Quality-controlled observations
               </div>
             </div>
           </Card>
 
           {/* Current source sample */}
-          <Card className="mt-4 border-[#E4E7EC] shadow-sm">
+          <Card className="mt-4 border-[#DCD7CE] shadow-sm">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <div className="section-label">
@@ -397,7 +397,7 @@ export default function DataQuality() {
                   Stored airfare records
                 </h2>
 
-                <p className="mt-2 text-xs leading-5 text-[#667085]">
+                <p className="mt-2 text-xs leading-5 text-[#74727A]">
                   This is live evidence from the stored observation layer.
                   <br />
                   Each row represents an individual airfare collected from
@@ -405,37 +405,37 @@ export default function DataQuality() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-[#E4E7EC] bg-[#F9FAFB] px-4 py-2 text-xs font-medium text-[#475467]">
+              <div className="rounded-lg border border-[#DCD7CE] bg-[#F6F2EC] px-4 py-2 text-xs font-medium text-[#5F5A63]">
                 {fares.length} records loaded
               </div>
             </div>
 
             {fares.length > 0 ? (
-              <div className="mt-6 overflow-x-auto rounded-lg border border-[#EAECF0]">
+              <div className="mt-6 overflow-x-auto rounded-lg border border-[#E1DBD2]">
                 <table className="w-full min-w-[900px] text-left">
-                  <thead className="bg-[#F9FAFB]">
-                    <tr className="border-b border-[#EAECF0]">
-                      <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                  <thead className="bg-[#F6F2EC]">
+                    <tr className="border-b border-[#E1DBD2]">
+                      <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                         Route
                       </th>
 
-                      <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                      <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                         Travel date
                       </th>
 
-                      <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                      <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                         Lead time
                       </th>
 
-                      <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                      <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                         Airline
                       </th>
 
-                      <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                      <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                         Fare
                       </th>
 
-                      <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                      <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                         Quality
                       </th>
                     </tr>
@@ -445,27 +445,27 @@ export default function DataQuality() {
                     {fares.slice(0, 30).map((fare) => (
                       <tr
                         key={fare.observation_id}
-                        className="border-b border-[#F2F4F7] hover:bg-[#F9FAFB] transition-colors last:border-0"
+                        className="border-b border-[#ECE8E1] hover:bg-[#F6F2EC] transition-colors last:border-0"
                       >
                         <td className="px-4 py-3">
-                          <span className="font-mono text-xs font-semibold text-[#172033]">
+                          <span className="font-mono text-xs font-semibold text-[#30313A]">
                             {fare.origin} → {fare.destination}
                           </span>
                         </td>
 
-                        <td className="px-4 py-3 text-xs text-[#667085]">
+                        <td className="px-4 py-3 text-xs text-[#74727A]">
                           {fare.travel_date}
                         </td>
 
-                        <td className="px-4 py-3 text-xs text-[#667085]">
+                        <td className="px-4 py-3 text-xs text-[#74727A]">
                           T+{fare.advance_days}
                         </td>
 
-                        <td className="px-4 py-3 text-xs text-[#172033]">
+                        <td className="px-4 py-3 text-xs text-[#30313A]">
                           {fare.airline}
                         </td>
 
-                        <td className="px-4 py-3 text-xs font-semibold text-[#172033]">
+                        <td className="px-4 py-3 text-xs font-semibold text-[#30313A]">
                           ₹
                           {fare.total_fare.toLocaleString('en-IN')}
                         </td>
@@ -494,17 +494,17 @@ export default function DataQuality() {
                 </table>
               </div>
             ) : (
-              <div className="mt-6 rounded-xl border border-dashed border-[#D0D5DD] p-10 text-center bg-[#F9FAFB]">
+              <div className="mt-6 rounded-xl border border-dashed border-[#CDC5BB] p-10 text-center bg-[#F6F2EC]">
                 <Database
                   size={28}
-                  className="mx-auto text-[#98A2B3]"
+                  className="mx-auto text-[#9A9499]"
                 />
 
-                <div className="mt-4 text-sm font-semibold text-[#344054]">
+                <div className="mt-4 text-sm font-semibold text-[#4B4851]">
                   No observation sample returned
                 </div>
 
-                <p className="mt-1 text-xs text-[#667085]">
+                <p className="mt-1 text-xs text-[#74727A]">
                   Check that the backend is running and contains
                   airfare observations.
                 </p>
@@ -512,24 +512,24 @@ export default function DataQuality() {
             )}
 
             {latestFare && (
-              <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 rounded-lg bg-[#F9FAFB] px-4 py-3 text-xs text-[#667085] border border-[#EAECF0]">
+              <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 rounded-lg bg-[#F6F2EC] px-4 py-3 text-xs text-[#74727A] border border-[#E1DBD2]">
                 <span>
                   Latest collection:{' '}
-                  <b className="font-semibold text-[#344054]">
+                  <b className="font-semibold text-[#4B4851]">
                     {formatDate(latestFare.collection_timestamp)}
                   </b>
                 </span>
 
                 <span>
                   Source:{' '}
-                  <b className="font-semibold text-[#344054]">
+                  <b className="font-semibold text-[#4B4851]">
                     {latestFare.source}
                   </b>
                 </span>
 
                 <span>
                   Currency:{' '}
-                  <b className="font-semibold text-[#344054]">
+                  <b className="font-semibold text-[#4B4851]">
                     {latestFare.currency}
                   </b>
                 </span>
@@ -538,11 +538,11 @@ export default function DataQuality() {
           </Card>
 
           {/* Quality events */}
-          <Card className="mt-4 border-[#E4E7EC] shadow-sm">
+          <Card className="mt-4 border-[#DCD7CE] shadow-sm">
             <div className="flex items-center gap-2">
               <AlertTriangle
                 size={16}
-                className="text-[#B54708]"
+                className="text-[#95672D]"
               />
 
               <div>
@@ -554,23 +554,23 @@ export default function DataQuality() {
             </div>
 
             {events.length > 0 ? (
-              <div className="mt-5 overflow-x-auto rounded-lg border border-[#EAECF0]">
+              <div className="mt-5 overflow-x-auto rounded-lg border border-[#E1DBD2]">
                 <table className="w-full min-w-[720px] text-left">
-                  <thead className="bg-[#F9FAFB]">
-                    <tr className="border-b border-[#EAECF0]">
-                      <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                  <thead className="bg-[#F6F2EC]">
+                    <tr className="border-b border-[#E1DBD2]">
+                      <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                         Event
                       </th>
 
-                      <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                      <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                         Count
                       </th>
 
-                      <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                      <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                         Route
                       </th>
 
-                      <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-wide text-[#667085]">
+                      <th className="px-4 py-3 text-[10px] font-bold uppercase tracking-wide text-[#74727A]">
                         Recorded
                       </th>
                     </tr>
@@ -606,23 +606,23 @@ export default function DataQuality() {
                       return (
                         <tr
                           key={`${eventName}-${index}`}
-                          className="border-b border-[#F2F4F7] hover:bg-[#F9FAFB] transition-colors last:border-0"
+                          className="border-b border-[#ECE8E1] hover:bg-[#F6F2EC] transition-colors last:border-0"
                         >
-                          <td className="px-4 py-3 text-xs font-semibold capitalize text-[#172033]">
+                          <td className="px-4 py-3 text-xs font-semibold capitalize text-[#30313A]">
                             {statusLabel(eventName)}
                           </td>
 
-                          <td className="px-4 py-3 text-xs text-[#667085]">
+                          <td className="px-4 py-3 text-xs text-[#74727A]">
                             {count === null
                               ? '—'
                               : formatNumber(count)}
                           </td>
 
-                          <td className="px-4 py-3 font-mono text-xs text-[#667085]">
+                          <td className="px-4 py-3 font-mono text-xs text-[#74727A]">
                             {route}
                           </td>
 
-                          <td className="px-4 py-3 text-xs text-[#667085]">
+                          <td className="px-4 py-3 text-xs text-[#74727A]">
                             {formatDate(timestamp)}
                           </td>
                         </tr>
@@ -632,19 +632,19 @@ export default function DataQuality() {
                 </table>
               </div>
             ) : (
-              <div className="mt-5 flex items-start gap-3 rounded-xl border border-[#ABEFC6] bg-[#ECFDF3] p-5 shadow-sm">
+              <div className="mt-5 flex items-start gap-3 rounded-xl border border-[#C5DDCC] bg-[#EEF5F0] p-5 shadow-sm">
                 <CheckCircle2
                   size={18}
-                  className="mt-0.5 shrink-0 text-[#027A48]"
+                  className="mt-0.5 shrink-0 text-[#4E8066]"
                 />
 
                 <div>
-                  <div className="text-sm font-semibold text-[#172033]">
+                  <div className="text-sm font-semibold text-[#30313A]">
                     No additional quality events recorded for the current
                     query.
                   </div>
 
-                  <p className="mt-1 text-xs text-[#667085]">
+                  <p className="mt-1 text-xs text-[#74727A]">
                     Individual observations may still carry quality flags,
                     as shown in the sample above.
                   </p>
@@ -655,28 +655,28 @@ export default function DataQuality() {
 
           {/* Integrity note */}
           <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
-            <Card className="border-[#E4E7EC] shadow-sm">
+            <Card className="border-[#DCD7CE] shadow-sm">
               <div className="flex items-center gap-2">
-                <ShieldCheck size={16} className="text-[#027A48]" />
+                <ShieldCheck size={16} className="text-[#4E8066]" />
                 <div className="section-label">DATA INTEGRITY</div>
               </div>
 
-              <p className="mt-3 text-xs leading-6 text-[#667085]">
+              <p className="mt-3 text-xs leading-6 text-[#74727A]">
                 Quality controls are applied before observations enter index
                 calculations. Records are retained with their quality status
                 so the collection history remains auditable.
               </p>
             </Card>
 
-            <Card className="border-[#E4E7EC] shadow-sm">
+            <Card className="border-[#DCD7CE] shadow-sm">
               <div className="flex items-center gap-2">
-                <XCircle size={16} className="text-[#B54708]" />
+                <XCircle size={16} className="text-[#95672D]" />
                 <div className="section-label">
                   INTEGRITY PRINCIPLE
                 </div>
               </div>
 
-              <p className="mt-3 text-xs leading-6 text-[#667085]">
+              <p className="mt-3 text-xs leading-6 text-[#74727A]">
                 APIx never replaces missing or rejected airfare
                 observations with invented prices. Routes without
                 sufficient eligible observations remain uncovered,

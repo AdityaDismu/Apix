@@ -39,7 +39,7 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen overflow-hidden bg-[#F5F7F8] text-[#172033]">
+    <div className="landing-page min-h-screen overflow-hidden bg-[#F5F7F8] text-[#172033]">
       {/* =========================
           HERO WITH VIDEO BACKGROUND
       ========================== */}
